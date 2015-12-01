@@ -42,19 +42,6 @@ They can also view other people's profiles.
 *  PostTableView
 *  PostView
 *  NewPostView
-*  LeaderboardView
-
-### Controller
-*  UserProfileViewController
-*  PostTableViewController
-*  PostViewController
-*  NewPostViewController
-*  UserRegistration
-*  LeaderboardViewController
-*  UserSignIn
-
-
-=======
 *  UserRegistrationView
 *  UserSignInView
 
