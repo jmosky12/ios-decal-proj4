@@ -36,17 +36,18 @@ Bullet Points: [Walk us through how your app would work - how the user would int
 
 ### View
 *  UserProfileView
-*  PostTableView
-*  PostView
+*  PostFeedTableView
+*  PostCellView
 *  NewPostView
+*  LeaderboardView
 
 ### Controller
 *  UserProfileViewController
-*  PostTableViewController
-*  PostViewController
-*  NewPostViewControllre
+*  PostFeedTableViewController
+*  PostCellViewController
+*  NewPostViewController
 *  UserRegistration
-*  LeaderboardView
+*  LeaderboardViewController
 *  UserSignIn
 
 
