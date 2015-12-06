@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DFD89DE11C1407D10033CD37 /* PhotoPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD89DDF1C1407D10033CD37 /* PhotoPostTableViewCell.swift */; };
+		DFD89DE21C1407D10033CD37 /* PhotoPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD89DE01C1407D10033CD37 /* PhotoPostTableViewCell.xib */; };
 		DFE1615B1C0D7C87003385C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1615A1C0D7C87003385C1 /* AppDelegate.swift */; };
 		DFE161631C0D7C87003385C1 /* Snapbook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFE161611C0D7C87003385C1 /* Snapbook.xcdatamodeld */; };
 		DFE161651C0D7C87003385C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE161641C0D7C87003385C1 /* Assets.xcassets */; };
@@ -18,9 +20,9 @@
 		DFE1617A1C0D7D31003385C1 /* NewPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE161781C0D7D31003385C1 /* NewPostViewController.xib */; };
 		DFE1617D1C0D7D43003385C1 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1617B1C0D7D43003385C1 /* UserProfileViewController.swift */; };
 		DFE1617E1C0D7D43003385C1 /* UserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE1617C1C0D7D43003385C1 /* UserProfileViewController.xib */; };
-		E32C1B3B1C13DA4F009385D7 /* Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = E32C1B3A1C13DA4F009385D7 /* Parse.m */; settings = {ASSET_TAGS = (); }; };
-		E32C1B3E1C13DAF9009385D7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B3C1C13DAF9009385D7 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		E32C1B3F1C13DAF9009385D7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B3D1C13DAF9009385D7 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		E32C1B3B1C13DA4F009385D7 /* Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = E32C1B3A1C13DA4F009385D7 /* Parse.m */; };
+		E32C1B3E1C13DAF9009385D7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B3C1C13DAF9009385D7 /* Bolts.framework */; };
+		E32C1B3F1C13DAF9009385D7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B3D1C13DAF9009385D7 /* Parse.framework */; };
 		E32C1B441C13DB5F009385D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B401C13DB5F009385D7 /* AudioToolbox.framework */; };
 		E32C1B451C13DB5F009385D7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B411C13DB5F009385D7 /* CFNetwork.framework */; };
 		E32C1B461C13DB5F009385D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B421C13DB5F009385D7 /* CoreGraphics.framework */; };
@@ -31,11 +33,13 @@
 		E32C1B4F1C13DB84009385D7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B4E1C13DB84009385D7 /* SystemConfiguration.framework */; };
 		E32C1B511C13DB8C009385D7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B501C13DB8C009385D7 /* libz.tbd */; };
 		E32C1B531C13DB96009385D7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B521C13DB96009385D7 /* libsqlite3.tbd */; };
-		E32C1B551C13DC91009385D7 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B541C13DC91009385D7 /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
-		E32C1B591C140297009385D7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C1B581C140297009385D7 /* Post.swift */; settings = {ASSET_TAGS = (); }; };
+		E32C1B551C13DC91009385D7 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B541C13DC91009385D7 /* ParseUI.framework */; };
+		E32C1B591C140297009385D7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C1B581C140297009385D7 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DFD89DDF1C1407D10033CD37 /* PhotoPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPostTableViewCell.swift; sourceTree = "<group>"; };
+		DFD89DE01C1407D10033CD37 /* PhotoPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoPostTableViewCell.xib; sourceTree = "<group>"; };
 		DFE161571C0D7C87003385C1 /* Snapbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE1615A1C0D7C87003385C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE161621C0D7C87003385C1 /* Snapbook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Snapbook.xcdatamodel; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				DFE1616F1C0D7CDF003385C1 /* PostFeedTableViewController.swift */,
 				DFE161721C0D7D02003385C1 /* PostTableViewCell.swift */,
 				DFE161731C0D7D02003385C1 /* PostTableViewCell.xib */,
+				DFD89DDF1C1407D10033CD37 /* PhotoPostTableViewCell.swift */,
+				DFD89DE01C1407D10033CD37 /* PhotoPostTableViewCell.xib */,
 				DFE161771C0D7D31003385C1 /* NewPostViewController.swift */,
 				DFE161781C0D7D31003385C1 /* NewPostViewController.xib */,
 			);
@@ -233,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFD89DE21C1407D10033CD37 /* PhotoPostTableViewCell.xib in Resources */,
 				DFE1617E1C0D7D43003385C1 /* UserProfileViewController.xib in Resources */,
 				DFE161751C0D7D02003385C1 /* PostTableViewCell.xib in Resources */,
 				DFE1617A1C0D7D31003385C1 /* NewPostViewController.xib in Resources */,
@@ -252,6 +259,7 @@
 				DFE1617D1C0D7D43003385C1 /* UserProfileViewController.swift in Sources */,
 				DFE161701C0D7CDF003385C1 /* PostFeedTableViewController.swift in Sources */,
 				E32C1B591C140297009385D7 /* Post.swift in Sources */,
+				DFD89DE11C1407D10033CD37 /* PhotoPostTableViewCell.swift in Sources */,
 				DFE161631C0D7C87003385C1 /* Snapbook.xcdatamodeld in Sources */,
 				DFE161741C0D7D02003385C1 /* PostTableViewCell.swift in Sources */,
 				DFE161791C0D7D31003385C1 /* NewPostViewController.swift in Sources */,
