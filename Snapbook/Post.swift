@@ -8,16 +8,11 @@
 
 import Foundation
 class Post: PFObject, PFSubclassing {
-    @NSManaged var image: PFFile
+    @NSManaged var image: PFFile?
     @NSManaged var user: PFUser
     @NSManaged var comment: String?
     
-    //1
-    class func parseClassName() -> String {
-        return "SnapPost"
-    }
-    
-    //2
+
     override class func initialize() {
         var onceToken: dispatch_once_t = 0
         dispatch_once(&onceToken) {
@@ -32,12 +27,16 @@ class Post: PFObject, PFSubclassing {
         return query
     }
     
-    init(image: PFFile, user: PFUser, comment: String?) {
+    init(image: PFFile?, user: PFUser, comment: String?) {
         super.init()
         
         self.image = image
         self.user = user
         self.comment = comment
+    }
+    
+    class func parseClassName() -> String {
+        return "SnapPost"
     }
     
     override init() {
