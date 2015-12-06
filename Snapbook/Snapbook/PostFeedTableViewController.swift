@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostFeedTableViewController: UITableViewController, PFLogInViewControllerDelegate {
+class PostFeedTableViewController: UITableViewController {
     
     let textColor = UIColor.whiteColor()
     let textFont = UIFont(name: "Avenir", size: 40.0)
@@ -26,6 +26,8 @@ class PostFeedTableViewController: UITableViewController, PFLogInViewControllerD
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "newPost")
         self.navigationItem.rightBarButtonItem = addButton
+        let logOutButton = UIBarButtonItem(title: "Log Out", style: UIBarButtonItemStyle.Plain, target: self, action: "logOutPressed")
+        self.navigationItem.leftBarButtonItem = logOutButton
         
         let titleTextAttributes: [String:NSObject] = [
             NSFontAttributeName: textFont!,
@@ -42,6 +44,12 @@ class PostFeedTableViewController: UITableViewController, PFLogInViewControllerD
         self.tableView.registerNib(nib, forCellReuseIdentifier: "postCell")
     }
     
+    func logOutPressed() {
+        PFUser.logOut()
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+
+    }
     func didPressInfo(sender: UILabel) {
         //expand this cell and show its comments
     }
@@ -61,16 +69,10 @@ class PostFeedTableViewController: UITableViewController, PFLogInViewControllerD
     }
     
     func newPost() {
-        //let vc = NewPostViewController()
-        //navigationController?.pushViewController(vc, animated: true)
-        let login = PFLogInViewController()
-        login.title = "SnapBook"
-        login.logInView?.logo?.hidden = true
-        //        login.logInView?.logo?.addS
-        login.delegate = self
-        self.presentViewController(login, animated: true) { () -> Void in
+        let vc = NewPostViewController()
+        navigationController?.pushViewController(vc, animated: true)
 
-        }
+        
     }
 
     /*
