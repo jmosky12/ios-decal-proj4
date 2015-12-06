@@ -40,8 +40,10 @@ class PostFeedTableViewController: UITableViewController {
         tableView.separatorColor = UIColor.blackColor()
         
         edgesForExtendedLayout = .None
-        let nib: UINib = UINib(nibName: "PostTableViewCell", bundle: nil)
-        self.tableView.registerNib(nib, forCellReuseIdentifier: "postCell")
+        let nib1: UINib = UINib(nibName: "PostTableViewCell", bundle: nil)
+        self.tableView.registerNib(nib1, forCellReuseIdentifier: "postCell")
+        let nib2: UINib = UINib(nibName: "PhotoPostTableViewCell", bundle: nil)
+        self.tableView.registerNib(nib2, forCellReuseIdentifier: "photoCell")
     }
     
     func logOutPressed() {
@@ -61,7 +63,11 @@ class PostFeedTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
+        // if user.photoproperty == nil {
+        let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoPostTableViewCell
+        /* } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoPostTableViewCell
+        }*/
         let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
         cell.postInfo.addGestureRecognizer(pressedInfo)
         cell.postInfo.tag = indexPath.row

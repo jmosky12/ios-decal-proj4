@@ -32,6 +32,10 @@ class NewPostViewController: UIViewController {
     }
 
     @IBAction func uploadPhotoPressed(sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
 
     @IBAction func postPressed(sender: UIButton) {
@@ -47,10 +51,20 @@ class NewPostViewController: UIViewController {
             }
         }
         
-        
     }
     
     @IBAction func cancelPicPressed(sender: UIButton) {
+        //remove pic from database
     }
 
+}
+
+extension NewPostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        picTitleLabel.hidden = false
+        cancelPicButton.hidden = false
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        //add pic to user's data, make the tableview cell adjust to the one with the picture
+    }
 }
