@@ -35,9 +35,10 @@ class NewPostViewController: UIViewController {
     }
 
     @IBAction func postPressed(sender: UIButton) {
-        let player = PFObject(className: "Post")
+        let player = PFObject(className: "Post2")
         player.setObject((PFUser.currentUser()?.username!)!, forKey: "Name")
         player.setObject(newPostTextView.text, forKey: "Text")
+        player.setObject([1,2,3,4], forKey: "lol")
         player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
             if succeeded {
                 print("Object Uploaded")

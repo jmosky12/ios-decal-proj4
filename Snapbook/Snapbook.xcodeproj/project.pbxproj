@@ -32,6 +32,7 @@
 		E32C1B511C13DB8C009385D7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B501C13DB8C009385D7 /* libz.tbd */; };
 		E32C1B531C13DB96009385D7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B521C13DB96009385D7 /* libsqlite3.tbd */; };
 		E32C1B551C13DC91009385D7 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B541C13DC91009385D7 /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
+		E32C1B591C140297009385D7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C1B581C140297009385D7 /* Post.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		E32C1B501C13DB8C009385D7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E32C1B521C13DB96009385D7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E32C1B541C13DC91009385D7 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		E32C1B581C140297009385D7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,19 +94,8 @@
 		DFE1614E1C0D7C87003385C1 = {
 			isa = PBXGroup;
 			children = (
-				E32C1B541C13DC91009385D7 /* ParseUI.framework */,
-				E32C1B521C13DB96009385D7 /* libsqlite3.tbd */,
-				E32C1B501C13DB8C009385D7 /* libz.tbd */,
-				E32C1B4E1C13DB84009385D7 /* SystemConfiguration.framework */,
-				E32C1B4C1C13DB79009385D7 /* StoreKit.framework */,
-				E32C1B4A1C13DB73009385D7 /* Security.framework */,
-				E32C1B481C13DB6C009385D7 /* QuartzCore.framework */,
-				E32C1B401C13DB5F009385D7 /* AudioToolbox.framework */,
-				E32C1B411C13DB5F009385D7 /* CFNetwork.framework */,
-				E32C1B421C13DB5F009385D7 /* CoreGraphics.framework */,
-				E32C1B431C13DB5F009385D7 /* CoreLocation.framework */,
-				E32C1B3C1C13DAF9009385D7 /* Bolts.framework */,
-				E32C1B3D1C13DAF9009385D7 /* Parse.framework */,
+				E32C1B561C140258009385D7 /* Models */,
+				E32C1B571C140261009385D7 /* Frameworks */,
 				E32C1B3A1C13DA4F009385D7 /* Parse.m */,
 				DFE161591C0D7C87003385C1 /* Snapbook */,
 				DFE161581C0D7C87003385C1 /* Products */,
@@ -153,6 +144,34 @@
 				DFE1617C1C0D7D43003385C1 /* UserProfileViewController.xib */,
 			);
 			name = Profiles;
+			sourceTree = "<group>";
+		};
+		E32C1B561C140258009385D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E32C1B581C140297009385D7 /* Post.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E32C1B571C140261009385D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E32C1B541C13DC91009385D7 /* ParseUI.framework */,
+				E32C1B521C13DB96009385D7 /* libsqlite3.tbd */,
+				E32C1B501C13DB8C009385D7 /* libz.tbd */,
+				E32C1B4E1C13DB84009385D7 /* SystemConfiguration.framework */,
+				E32C1B4C1C13DB79009385D7 /* StoreKit.framework */,
+				E32C1B4A1C13DB73009385D7 /* Security.framework */,
+				E32C1B481C13DB6C009385D7 /* QuartzCore.framework */,
+				E32C1B401C13DB5F009385D7 /* AudioToolbox.framework */,
+				E32C1B411C13DB5F009385D7 /* CFNetwork.framework */,
+				E32C1B421C13DB5F009385D7 /* CoreGraphics.framework */,
+				E32C1B431C13DB5F009385D7 /* CoreLocation.framework */,
+				E32C1B3C1C13DAF9009385D7 /* Bolts.framework */,
+				E32C1B3D1C13DAF9009385D7 /* Parse.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +251,7 @@
 				DFE1615B1C0D7C87003385C1 /* AppDelegate.swift in Sources */,
 				DFE1617D1C0D7D43003385C1 /* UserProfileViewController.swift in Sources */,
 				DFE161701C0D7CDF003385C1 /* PostFeedTableViewController.swift in Sources */,
+				E32C1B591C140297009385D7 /* Post.swift in Sources */,
 				DFE161631C0D7C87003385C1 /* Snapbook.xcdatamodeld in Sources */,
 				DFE161741C0D7D02003385C1 /* PostTableViewCell.swift in Sources */,
 				DFE161791C0D7D31003385C1 /* NewPostViewController.swift in Sources */,
