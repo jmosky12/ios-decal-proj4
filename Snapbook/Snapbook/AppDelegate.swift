@@ -79,6 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
         if let user = PFUser.currentUser() {
             if user.authenticated {
                 login.presentViewController(tabBarController, animated: false, completion: nil)
+
             }
         }
         return true

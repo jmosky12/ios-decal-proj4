@@ -50,8 +50,38 @@ class NewPostViewController: UIViewController {
 //            }
 //        }
         //1
-        let p = Post(image: nil, user: PFUser.currentUser()!, comment: newPostTextView.text)
+        if imageView.image != nil {
+        let pictureData = UIImagePNGRepresentation(imageView.image!)
+        let file:PFFile! = PFFile(name:"image", data:pictureData!)
+        
+        file.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
+            if succeeded {
+                //2
+              //  self.saveWallPost(file)
+            let p = Post(image: file, user: PFUser.currentUser()!, comment: self.newPostTextView.text)
+                p.saveInBackgroundWithBlock{ succeeded, error in
+                    if succeeded {
+                        //3
+                        self.delegate!.refresh()
+                        self.navigationController?.popViewControllerAnimated(true)
+                    } else {
+                        //4
+                        if let errorMessage = error?.userInfo["error"] as? String {
+                            print(errorMessage)
+                        }
+                    }
+                }
+            } else if let error = error {
+                //3
+             //   self.showErrorView(error)
+            }
+            }, progressBlock: { percent in
+                //4
+                print("Uploaded: \(percent)%")
+        })
+        } else {
         //2
+        let p = Post(image: nil, user: PFUser.currentUser()!, comment: self.newPostTextView.text)
         p.saveInBackgroundWithBlock{ succeeded, error in
             if succeeded {
                 //3
@@ -63,6 +93,7 @@ class NewPostViewController: UIViewController {
                     print(errorMessage)
                 }
             }
+        }
         }
         
     }

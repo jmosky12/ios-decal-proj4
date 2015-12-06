@@ -99,12 +99,35 @@ class PostFeedTableViewController: UITableViewController, PostTable {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // if user.photoproperty == nil {
-        let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoPostTableViewCell
+       
         /* } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoPostTableViewCell
         }*/
+        
+ 
+        if let x = posts[indexPath.row].image
+        {
+            let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoPostTableViewCell
+            x.getDataInBackgroundWithBlock { data, error in
+            if let data = data {
+                if let image = UIImage(data: data) {
+                    cell.uploadedImage!.image = image
+                    
+                }
+            }
+            }
+            cell.postText.text = self.posts[indexPath.row].comment
+            
+            cell.userName.setTitle(self.posts[indexPath.row].user.username, forState: .Normal)
+            let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
+            cell.postInfo.addGestureRecognizer(pressedInfo)
+            cell.postInfo.tag = indexPath.row
+            return cell
+        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
+        
         cell.postText.text = posts[indexPath.row].comment
-
+        
         cell.userName.setTitle(posts[indexPath.row].user.username, forState: .Normal)
         let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
         cell.postInfo.addGestureRecognizer(pressedInfo)
