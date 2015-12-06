@@ -65,9 +65,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
         login.delegate = self
         login.signUpController?.delegate = self
         login.logInView?.dismissButton?.hidden = true
-//        self.presentViewController(login, animated: true) { () -> Void in
-//            
-//        }
         window?.rootViewController = login
         if let user = PFUser.currentUser() {
             if user.authenticated {
