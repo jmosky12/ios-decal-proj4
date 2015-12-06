@@ -8,19 +8,44 @@
 
 import UIKit
 
-class PostFeedTableViewController: UITableViewController {
+protocol PostTable {
+    func refresh()
+}
+class PostFeedTableViewController: UITableViewController, PostTable {
     
     let textColor = UIColor.whiteColor()
-    let textFont = UIFont(name: "Avenir", size: 30.0)
+    let textFont = UIFont(name: "Avenir", size: 40.0)
+    var posts = [Post]()
     
     init() {
         super.init(nibName: nil, bundle: nil)
     }
-    
+    func refresh() {
+        self.tableView.reloadData()
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    func getPosts() {
+        //1
+        let query = Post.query()!
+        query.findObjectsInBackgroundWithBlock { objects, error in
+            if error == nil {
+                //2
+                if let objects = objects as? [Post] {
+                 //   self.loadPosts(objects)
+                    self.posts = objects
+                    self.tableView.reloadData()
+                }
+            } else if let error = error {
+                //3
+                print(error)
+            }
+        }
+    }
+    func loadPosts(objects: [Post]) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +69,7 @@ class PostFeedTableViewController: UITableViewController {
         self.tableView.registerNib(nib1, forCellReuseIdentifier: "postCell")
         let nib2: UINib = UINib(nibName: "PhotoPostTableViewCell", bundle: nil)
         self.tableView.registerNib(nib2, forCellReuseIdentifier: "photoCell")
+        getPosts()
     }
     
     func logOutPressed() {
@@ -60,7 +86,7 @@ class PostFeedTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return posts.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -69,6 +95,8 @@ class PostFeedTableViewController: UITableViewController {
         /* } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoPostTableViewCell
         }*/
+        cell.postText.text = posts[indexPath.row].comment
+        cell.userName.titleLabel?.text = posts[indexPath.row].user.username
         let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
         cell.postInfo.addGestureRecognizer(pressedInfo)
         cell.postInfo.tag = indexPath.row
@@ -77,6 +105,7 @@ class PostFeedTableViewController: UITableViewController {
     
     func newPost() {
         let vc = NewPostViewController()
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
 
         

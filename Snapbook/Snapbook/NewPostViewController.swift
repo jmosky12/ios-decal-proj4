@@ -15,7 +15,7 @@ class NewPostViewController: UIViewController {
     @IBOutlet weak var picTitleLabel: UILabel!
     @IBOutlet weak var cancelPicButton: UIButton!
     @IBOutlet weak var postButton: UIButton!
-    
+    var delegate:PostTable?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,15 +39,30 @@ class NewPostViewController: UIViewController {
     }
 
     @IBAction func postPressed(sender: UIButton) {
-        let player = PFObject(className: "Post2")
-        player.setObject((PFUser.currentUser()?.username!)!, forKey: "Name")
-        player.setObject(newPostTextView.text, forKey: "Text")
-        player.setObject([1,2,3,4], forKey: "lol")
-        player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+//        let player = PFObject(className: "Post2")
+//        player.setObject((PFUser.currentUser()?.username!)!, forKey: "Name")
+//        player.setObject(newPostTextView.text, forKey: "Text")
+//        player.setObject([1,2,3,4], forKey: "lol")
+//        player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+//            if succeeded {
+//                print("Object Uploaded")
+//            } else {
+//                print("Error: \(error!) \(error?.userInfo)")
+//            }
+//        }
+        //1
+        let p = Post(image: nil, user: PFUser.currentUser()!, comment: newPostTextView.text)
+        //2
+        p.saveInBackgroundWithBlock{ succeeded, error in
             if succeeded {
-                print("Object Uploaded")
+                //3
+                self.delegate?.refresh()
+                self.navigationController?.popViewControllerAnimated(true)
             } else {
-                print("Error: \(error!) \(error?.userInfo)")
+                //4
+                if let errorMessage = error?.userInfo["error"] as? String {
+                    print(errorMessage)
+                }
             }
         }
         
