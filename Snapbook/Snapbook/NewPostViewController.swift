@@ -56,7 +56,7 @@ class NewPostViewController: UIViewController {
         p.saveInBackgroundWithBlock{ succeeded, error in
             if succeeded {
                 //3
-                delegate?.refresh()
+                self.delegate?.refresh()
                 self.navigationController?.popViewControllerAnimated(true)
             } else {
                 //4
