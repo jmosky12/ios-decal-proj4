@@ -23,14 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         postFeedNC.tabBarItem.title = "Feed"
         postFeedNC.tabBarItem.tag = 1
         postFeedNC.navigationBar.barTintColor = UIColor.blackColor()
+        postFeedNC.navigationBar.tintColor = UIColor.whiteColor()
         postFeedNC.navigationBar.topItem?.title = "News Feed"
+        postFeedNC.navigationBar.translucent = false
         
         let userProfile = UserProfileViewController()
         let userProfileNC = UINavigationController(rootViewController: userProfile)
         userProfileNC.tabBarItem.title = "Profile"
         userProfileNC.tabBarItem.tag = 2
         userProfileNC.navigationBar.barTintColor = UIColor.blackColor()
+        userProfileNC.navigationBar.tintColor = UIColor.whiteColor()
         userProfileNC.navigationBar.topItem?.title = "Profile"
+        userProfileNC.navigationBar.translucent = false
         
         let controllers = [postFeedNC, userProfileNC]
         
@@ -42,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBar.appearance().tintColor = UIColor.whiteColor()
         UITabBar.appearance().barTintColor = UIColor.blackColor()
-        UITabBar.appearance().tintColor = UIColor.blueColor()
+        UITabBar.appearance().tintColor = UIColor(red: 60.0/255.0, green: 10.0/255.0, blue: 130.0/255.0, alpha: 1.0)
         UITabBar.appearance().translucent = false
         
         Parse.setApplicationId("oxaxKBeRfV0SPggTnmaNn5YuTWJIhv56jv3pZIGK", clientKey: "33wGUNkGqctKoQ5WkRXBcSgKI4RuBzQI40KoJiH3")
@@ -56,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Error: \(error!) \(error?.userInfo)")
             }
         }
+        
         
         return true
     }
