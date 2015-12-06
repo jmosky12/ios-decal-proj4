@@ -69,11 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
 //            
 //        }
         window?.rootViewController = login
-        if let user = PFUser.currentUser() {
-            if user.authenticated {
-                login.presentViewController(tabBarController, animated: false, completion: nil)
-            }
-        }
+
         
         self.window?.makeKeyAndVisible()
         
@@ -83,7 +79,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
         UITabBar.appearance().translucent = false
         
         Parse.setApplicationId("oxaxKBeRfV0SPggTnmaNn5YuTWJIhv56jv3pZIGK", clientKey: "33wGUNkGqctKoQ5WkRXBcSgKI4RuBzQI40KoJiH3")
-
+        if let user = PFUser.currentUser() {
+            if user.authenticated {
+                login.presentViewController(tabBarController, animated: false, completion: nil)
+            }
+        }
         return true
     }
 
