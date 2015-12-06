@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DFD89DE11C1407D10033CD37 /* PhotoPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD89DDF1C1407D10033CD37 /* PhotoPostTableViewCell.swift */; };
 		DFD89DE21C1407D10033CD37 /* PhotoPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD89DE01C1407D10033CD37 /* PhotoPostTableViewCell.xib */; };
+		DFD89DE51C142A850033CD37 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD89DE31C142A850033CD37 /* EditProfileViewController.swift */; };
+		DFD89DE61C142A850033CD37 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD89DE41C142A850033CD37 /* EditProfileViewController.xib */; };
 		DFE1615B1C0D7C87003385C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1615A1C0D7C87003385C1 /* AppDelegate.swift */; };
 		DFE161631C0D7C87003385C1 /* Snapbook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFE161611C0D7C87003385C1 /* Snapbook.xcdatamodeld */; };
 		DFE161651C0D7C87003385C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFE161641C0D7C87003385C1 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		DFD89DDF1C1407D10033CD37 /* PhotoPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPostTableViewCell.swift; sourceTree = "<group>"; };
 		DFD89DE01C1407D10033CD37 /* PhotoPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoPostTableViewCell.xib; sourceTree = "<group>"; };
+		DFD89DE31C142A850033CD37 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		DFD89DE41C142A850033CD37 /* EditProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		DFE161571C0D7C87003385C1 /* Snapbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFE1615A1C0D7C87003385C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFE161621C0D7C87003385C1 /* Snapbook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Snapbook.xcdatamodel; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 			children = (
 				DFE1617B1C0D7D43003385C1 /* UserProfileViewController.swift */,
 				DFE1617C1C0D7D43003385C1 /* UserProfileViewController.xib */,
+				DFD89DE31C142A850033CD37 /* EditProfileViewController.swift */,
+				DFD89DE41C142A850033CD37 /* EditProfileViewController.xib */,
 			);
 			name = Profiles;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 				DFD89DE21C1407D10033CD37 /* PhotoPostTableViewCell.xib in Resources */,
 				DFE1617E1C0D7D43003385C1 /* UserProfileViewController.xib in Resources */,
 				DFE161751C0D7D02003385C1 /* PostTableViewCell.xib in Resources */,
+				DFD89DE61C142A850033CD37 /* EditProfileViewController.xib in Resources */,
 				DFE1617A1C0D7D31003385C1 /* NewPostViewController.xib in Resources */,
 				DFE161681C0D7C87003385C1 /* LaunchScreen.storyboard in Resources */,
 				DFE161651C0D7C87003385C1 /* Assets.xcassets in Resources */,
@@ -263,6 +270,7 @@
 				DFE161631C0D7C87003385C1 /* Snapbook.xcdatamodeld in Sources */,
 				DFE161741C0D7D02003385C1 /* PostTableViewCell.swift in Sources */,
 				DFE161791C0D7D31003385C1 /* NewPostViewController.swift in Sources */,
+				DFD89DE51C142A850033CD37 /* EditProfileViewController.swift in Sources */,
 				E32C1B3B1C13DA4F009385D7 /* Parse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,13 @@
 
 import UIKit
 
-class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
+protocol UserProfileViewControllerDelegate {
+    func getBioText() -> String
+    func setBioText(text: String)
+    func changePicture(image: UIImage)
+}
+
+class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UserProfileViewControllerDelegate {
     
     @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -43,8 +49,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         userTableView.separatorColor = UIColor.blackColor()
         
         userBioTextView.layer.cornerRadius = 5.0
-        let bioTapped = UITapGestureRecognizer(target: self, action: "bioTextViewTapped")
-        userBioTextView.addGestureRecognizer(bioTapped)
         
         let img = UIImage(named: "pic2")
         userAvatar.image = img
@@ -54,20 +58,14 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "newPost")
         self.navigationItem.rightBarButtonItem = addButton
+        let editProfileButton = UIBarButtonItem(title: "Edit Profile", style: UIBarButtonItemStyle.Plain, target: self, action: "editProfile")
+        self.navigationItem.leftBarButtonItem = editProfileButton
 
         let titleTextAttributes: [String:NSObject] = [
             NSFontAttributeName: textFont!,
             NSForegroundColorAttributeName: textColor,
         ]
         self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
-    }
-    
-    func bioTextViewTapped() {
-        //add check that user matches profile
-        if editingBio == false {
-            userBioTextView.editable = true
-            editingBio = true
-        }
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
@@ -92,6 +90,24 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     func newPost() {
         let vc = NewPostViewController()
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func editProfile() {
+        let vc = EditProfileViewController()
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func getBioText() -> String {
+        return userBioTextView.text
+    }
+    
+    func setBioText(text: String) {
+        userBioTextView.text = text
+    }
+    
+    func changePicture(image: UIImage) {
+        userAvatar.image = image
     }
 
 }
