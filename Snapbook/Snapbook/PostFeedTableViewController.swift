@@ -27,7 +27,7 @@ class PostFeedTableViewController: UITableViewController, PostTable {
     }
     
     func refresh() {
-        self.tableView.reloadData()
+        getPosts()
     }
     
     func getPosts() {
