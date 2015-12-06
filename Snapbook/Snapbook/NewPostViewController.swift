@@ -10,26 +10,34 @@ import UIKit
 
 class NewPostViewController: UIViewController {
 
+    @IBOutlet weak var newPostTextView: UITextView!
+    @IBOutlet weak var uploadPhotoButton: UIButton!
+    @IBOutlet weak var picTitleLabel: UILabel!
+    @IBOutlet weak var cancelPicButton: UIButton!
+    @IBOutlet weak var postButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        edgesForExtendedLayout = .None
+        
+        picTitleLabel.hidden = true
+        cancelPicButton.hidden = true
+        cancelPicButton.layer.cornerRadius = 15.0
+        newPostTextView.layer.cornerRadius = 5.0
+        uploadPhotoButton.layer.cornerRadius = 5.0
+        postButton.layer.cornerRadius = 5.0
+    
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func uploadPhotoPressed(sender: UIButton) {
+    }
+
+    @IBAction func postPressed(sender: UIButton) {
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func cancelPicPressed(sender: UIButton) {
     }
-    */
 
 }
