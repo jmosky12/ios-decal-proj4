@@ -12,7 +12,7 @@ class NewPostViewController: UIViewController {
 
     @IBOutlet weak var newPostTextView: UITextView!
     @IBOutlet weak var uploadPhotoButton: UIButton!
-    @IBOutlet weak var picTitleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cancelPicButton: UIButton!
     @IBOutlet weak var postButton: UIButton!
     var delegate:PostTable?
@@ -20,8 +20,7 @@ class NewPostViewController: UIViewController {
         super.viewDidLoad()
         
         edgesForExtendedLayout = .None
-        
-        picTitleLabel.hidden = true
+        imageView.hidden = true
         cancelPicButton.hidden = true
         cancelPicButton.layer.cornerRadius = 15.0
         newPostTextView.layer.cornerRadius = 5.0
@@ -77,7 +76,10 @@ class NewPostViewController: UIViewController {
 extension NewPostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-        picTitleLabel.hidden = false
+        imageView.hidden = false
+        imageView.image = image
+        imageView.clipsToBounds = true
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
         cancelPicButton.hidden = false
         picker.dismissViewControllerAnimated(true, completion: nil)
         //add pic to user's data, make the tableview cell adjust to the one with the picture

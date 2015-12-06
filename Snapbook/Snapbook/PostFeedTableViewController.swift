@@ -14,18 +14,22 @@ protocol PostTable {
 class PostFeedTableViewController: UITableViewController, PostTable {
     
     let textColor = UIColor.whiteColor()
-    let textFont = UIFont(name: "Avenir", size: 40.0)
+    let textFont = UIFont(name: "Avenir", size: 30.0)
     var posts = [Post]()
+    var refreshCtrl: UIRefreshControl!
     
     init() {
         super.init(nibName: nil, bundle: nil)
     }
-    func refresh() {
-        self.tableView.reloadData()
-    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func refresh() {
+        self.tableView.reloadData()
+    }
+    
     func getPosts() {
         //1
         let query = Post.query()!
@@ -36,6 +40,7 @@ class PostFeedTableViewController: UITableViewController, PostTable {
                  //   self.loadPosts(objects)
                     self.posts = objects
                     self.tableView.reloadData()
+                    self.refreshCtrl.endRefreshing()
                 }
             } else if let error = error {
                 //3
@@ -43,9 +48,7 @@ class PostFeedTableViewController: UITableViewController, PostTable {
             }
         }
     }
-    func loadPosts(objects: [Post]) {
-        
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,6 +73,11 @@ class PostFeedTableViewController: UITableViewController, PostTable {
         let nib2: UINib = UINib(nibName: "PhotoPostTableViewCell", bundle: nil)
         self.tableView.registerNib(nib2, forCellReuseIdentifier: "photoCell")
         getPosts()
+        
+        refreshCtrl = UIRefreshControl()
+        tableView.insertSubview(refreshCtrl, atIndex: 0)
+        refreshCtrl.addTarget(self, action: "getPosts", forControlEvents: .ValueChanged)
+        
     }
     
     func logOutPressed() {

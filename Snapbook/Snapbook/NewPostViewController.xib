@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewPostViewController" customModule="Snapbook" customModuleProvider="target">
             <connections>
                 <outlet property="cancelPicButton" destination="lyo-0D-Dt4" id="6yF-IO-GEO"/>
+                <outlet property="imageView" destination="FMe-cs-IBT" id="yN9-yZ-VP6"/>
                 <outlet property="newPostTextView" destination="M72-IA-kIA" id="FYf-6S-fkY"/>
                 <outlet property="postButton" destination="UaR-A7-SWj" id="M3S-A2-5RO"/>
                 <outlet property="uploadPhotoButton" destination="cWS-Xc-haR" id="woB-Us-f3j"/>
