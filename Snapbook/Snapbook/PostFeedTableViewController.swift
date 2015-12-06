@@ -20,7 +20,7 @@ class PostFeedTableViewController: UITableViewController, PostTable {
         super.init(nibName: nil, bundle: nil)
     }
     func refresh() {
-        self.tableView.reloadData()
+        getPosts()
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -94,7 +94,8 @@ class PostFeedTableViewController: UITableViewController, PostTable {
             let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoPostTableViewCell
         }*/
         cell.postText.text = posts[indexPath.row].comment
-        cell.userName.titleLabel?.text = posts[indexPath.row].user.username
+
+        cell.userName.setTitle(posts[indexPath.row].user.username, forState: .Normal)
         let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
         cell.postInfo.addGestureRecognizer(pressedInfo)
         cell.postInfo.tag = indexPath.row
