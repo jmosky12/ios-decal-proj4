@@ -68,7 +68,8 @@ class NewPostViewController: UIViewController {
     }
     
     @IBAction func cancelPicPressed(sender: UIButton) {
-        //remove pic from database
+        imageView.image = nil
+        imageView.hidden = true
     }
 
 }
