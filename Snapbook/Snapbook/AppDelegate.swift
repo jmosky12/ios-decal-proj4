@@ -10,11 +10,28 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
 
     var window: UIWindow?
+    var tabBarController: UITabBarController!
+    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+        logInController.logInView?.usernameField?.text = ""
+        logInController.logInView?.passwordField?.text = ""
 
+        logInController.presentViewController(tabBarController!, animated: true, completion: nil)
+    }
+    
+    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+//        signUpController.dismissViewControllerAnimated(true, completion: nil)
+        signUpController.signUpView?.usernameField?.text = ""
+        signUpController.signUpView?.passwordField?.text = ""
+        signUpController.signUpView?.emailField?.text = ""
 
+        signUpController.presentViewController(tabBarController!, animated: true, completion: nil)
+//        signUpController.dismissViewControllerAnimated(false, completion: nil)
+
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
         
@@ -38,10 +55,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let controllers = [postFeedNC, userProfileNC]
         
-        let tabBarController = UITabBarController()
+        tabBarController = UITabBarController()
         tabBarController.viewControllers = controllers
         self.window?.addSubview(tabBarController.view)
-        window?.rootViewController = tabBarController
+
+        let login = PFLogInViewController()
+        login.title = "SnapBook"
+        login.logInView?.logo?.hidden = true
+        login.delegate = self
+        login.signUpController?.delegate = self
+        login.logInView?.dismissButton?.hidden = true
+//        self.presentViewController(login, animated: true) { () -> Void in
+//            
+//        }
+        window?.rootViewController = login
+        if let user = PFUser.currentUser() {
+            if user.authenticated {
+                login.presentViewController(tabBarController, animated: false, completion: nil)
+            }
+        }
+        
         self.window?.makeKeyAndVisible()
         
         UITabBar.appearance().tintColor = UIColor.whiteColor()
@@ -50,18 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().translucent = false
         
         Parse.setApplicationId("oxaxKBeRfV0SPggTnmaNn5YuTWJIhv56jv3pZIGK", clientKey: "33wGUNkGqctKoQ5WkRXBcSgKI4RuBzQI40KoJiH3")
-        let player = PFObject(className: "Player")
-        player.setObject("John", forKey: "Name")
-        player.setObject(1230, forKey: "Score")
-        player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
-            if succeeded {
-                print("Object Uploaded")
-            } else {
-                print("Error: \(error!) \(error?.userInfo)")
-            }
-        }
-        
-        
+
         return true
     }
 

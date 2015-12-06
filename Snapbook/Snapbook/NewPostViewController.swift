@@ -35,6 +35,18 @@ class NewPostViewController: UIViewController {
     }
 
     @IBAction func postPressed(sender: UIButton) {
+        let player = PFObject(className: "Post")
+        player.setObject((PFUser.currentUser()?.username!)!, forKey: "Name")
+        player.setObject(newPostTextView.text, forKey: "Text")
+        player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+            if succeeded {
+                print("Object Uploaded")
+            } else {
+                print("Error: \(error!) \(error?.userInfo)")
+            }
+        }
+        
+        
     }
     
     @IBAction func cancelPicPressed(sender: UIButton) {
