@@ -83,20 +83,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
         UITabBar.appearance().translucent = false
         
         Parse.setApplicationId("oxaxKBeRfV0SPggTnmaNn5YuTWJIhv56jv3pZIGK", clientKey: "33wGUNkGqctKoQ5WkRXBcSgKI4RuBzQI40KoJiH3")
-<<<<<<< HEAD
-        let player = PFObject(className: "Player")
-        player.setObject("John", forKey: "Name")
-        player.setObject(1230, forKey: "Score")
-        player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
-            if succeeded {
-                print("Object Uploaded")
-            } else {
-                print("Error: \(error!) \(error?.userInfo)")
-            }
-        }
-        
-=======
->>>>>>> 3df1ba28c0c21d3ec0fbebca3050890a0ddd11eb
 
         return true
     }
