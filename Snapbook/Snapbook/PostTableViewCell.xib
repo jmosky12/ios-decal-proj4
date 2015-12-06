@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -31,17 +31,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Um7-A2-xjK">
-                        <rect key="frame" x="8" y="153" width="144" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="144" id="6ZL-mT-v7F"/>
-                            <constraint firstAttribute="height" constant="30" id="mFT-gY-VCm"/>
-                        </constraints>
-                        <state key="normal" title="Boost">
-                            <color key="titleColor" red="0.23529411764705882" green="0.039215686274509803" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 17 Likes, 15 Comments, 8h Remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zb5-Ak-hSx">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 17 Boosts, 8h Remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zb5-Ak-hSx">
                         <rect key="frame" x="8" y="124" width="304" height="21"/>
                         <color key="backgroundColor" red="0.23529411764705882" green="0.039215686274509803" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -62,22 +52,21 @@
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBf-s5-HWV">
-                        <rect key="frame" x="160" y="153" width="152" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Um7-A2-xjK">
+                        <rect key="frame" x="8" y="153" width="304" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="152" id="GmF-y5-5XI"/>
+                            <constraint firstAttribute="width" constant="304" id="6ZL-mT-v7F"/>
+                            <constraint firstAttribute="height" constant="30" id="mFT-gY-VCm"/>
                         </constraints>
-                        <state key="normal" title="Comment">
+                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="18"/>
+                        <state key="normal" title="Boost">
                             <color key="titleColor" red="0.23529411764705882" green="0.039215686274509803" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="IBf-s5-HWV" firstAttribute="leading" secondItem="Um7-A2-xjK" secondAttribute="trailing" constant="8" id="Ggo-5Y-Joa"/>
                     <constraint firstItem="OZm-TO-6dW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="GmU-fP-ilV"/>
                     <constraint firstItem="dph-f2-WAk" firstAttribute="leading" secondItem="UKO-5X-WCq" secondAttribute="leading" id="Gw6-nV-6lM"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="IBf-s5-HWV" secondAttribute="bottom" constant="1" id="HEX-CB-gwM"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="IBf-s5-HWV" secondAttribute="trailing" id="Hri-nt-kQm"/>
                     <constraint firstAttribute="trailingMargin" secondItem="OZm-TO-6dW" secondAttribute="trailing" id="TcM-XQ-jvi"/>
                     <constraint firstItem="OZm-TO-6dW" firstAttribute="centerY" secondItem="UKO-5X-WCq" secondAttribute="centerY" id="VTs-tG-MSk"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Um7-A2-xjK" secondAttribute="bottom" constant="1" id="YPE-8f-jEW"/>
@@ -85,13 +74,13 @@
                     <constraint firstItem="zb5-Ak-hSx" firstAttribute="leading" secondItem="UKO-5X-WCq" secondAttribute="leading" id="aMl-Vb-BKQ"/>
                     <constraint firstItem="zb5-Ak-hSx" firstAttribute="trailing" secondItem="dph-f2-WAk" secondAttribute="trailing" id="emM-kT-teE"/>
                     <constraint firstItem="OZm-TO-6dW" firstAttribute="trailing" secondItem="dph-f2-WAk" secondAttribute="trailing" id="g09-Q6-GE0"/>
-                    <constraint firstItem="IBf-s5-HWV" firstAttribute="trailing" secondItem="dph-f2-WAk" secondAttribute="trailing" id="juy-f5-m88"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Um7-A2-xjK" secondAttribute="bottom" constant="1" id="mRp-AN-mos"/>
                     <constraint firstItem="zb5-Ak-hSx" firstAttribute="top" secondItem="dph-f2-WAk" secondAttribute="bottom" constant="8" id="mx0-d9-qqJ"/>
                     <constraint firstItem="OZm-TO-6dW" firstAttribute="leading" secondItem="UKO-5X-WCq" secondAttribute="trailing" constant="8" id="omc-d9-aid"/>
                     <constraint firstItem="Um7-A2-xjK" firstAttribute="leading" secondItem="UKO-5X-WCq" secondAttribute="leading" id="qRd-ez-8oV"/>
                     <constraint firstItem="Um7-A2-xjK" firstAttribute="top" secondItem="zb5-Ak-hSx" secondAttribute="bottom" constant="8" id="qSd-Fd-PRy"/>
                     <constraint firstAttribute="topMargin" secondItem="UKO-5X-WCq" secondAttribute="top" id="shM-9A-ncp"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Um7-A2-xjK" secondAttribute="trailing" id="y0Y-Tc-q4b"/>
                     <constraint firstAttribute="leadingMargin" secondItem="UKO-5X-WCq" secondAttribute="leading" id="y2J-xU-7La"/>
                     <constraint firstItem="dph-f2-WAk" firstAttribute="top" secondItem="UKO-5X-WCq" secondAttribute="bottom" constant="8" id="zfx-CU-ENc"/>
                 </constraints>
@@ -103,7 +92,6 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatarImage" destination="UKO-5X-WCq" id="faX-dU-KGV"/>
-                <outlet property="commentButton" destination="IBf-s5-HWV" id="r38-3Z-ttl"/>
                 <outlet property="likeButton" destination="Um7-A2-xjK" id="MGv-Ih-KkK"/>
                 <outlet property="postInfo" destination="zb5-Ak-hSx" id="Pds-Vp-eCf"/>
                 <outlet property="postText" destination="dph-f2-WAk" id="cR0-ZK-jtc"/>

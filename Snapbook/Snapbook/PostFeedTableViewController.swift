@@ -11,7 +11,7 @@ import UIKit
 class PostFeedTableViewController: UITableViewController {
     
     let textColor = UIColor.whiteColor()
-    let textFont = UIFont(name: "Avenir", size: 40.0)
+    let textFont = UIFont(name: "Avenir", size: 30.0)
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -49,12 +49,13 @@ class PostFeedTableViewController: UITableViewController {
     func logOutPressed() {
         PFUser.logOut()
         self.dismissViewControllerAnimated(true, completion: nil)
-        
-
     }
+    
     func didPressInfo(sender: UILabel) {
         //expand this cell and show its comments
     }
+    
+   
 
     // MARK: - Table view data source
 

@@ -16,7 +16,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var userTableView: UITableView!
     
     let textColor = UIColor.whiteColor()
-    let textFont = UIFont(name: "Avenir", size: 40.0)
+    let textFont = UIFont(name: "Avenir", size: 30.0)
     var editingBio = false
     
     init() {

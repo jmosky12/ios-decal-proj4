@@ -14,7 +14,6 @@ class PhotoPostTableViewCell: UITableViewCell {
     @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var postInfo: UILabel!
     @IBOutlet weak var likeButton: UIButton!
-    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var userName: UIButton!
     @IBOutlet weak var uploadedImage: UIImageView!
     
