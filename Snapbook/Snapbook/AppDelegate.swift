@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().translucent = false
         
         
-        
+
         return true
     }
 
