@@ -18,6 +18,20 @@
 		DFE1617A1C0D7D31003385C1 /* NewPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE161781C0D7D31003385C1 /* NewPostViewController.xib */; };
 		DFE1617D1C0D7D43003385C1 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1617B1C0D7D43003385C1 /* UserProfileViewController.swift */; };
 		DFE1617E1C0D7D43003385C1 /* UserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE1617C1C0D7D43003385C1 /* UserProfileViewController.xib */; };
+		E32C1B3B1C13DA4F009385D7 /* Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = E32C1B3A1C13DA4F009385D7 /* Parse.m */; settings = {ASSET_TAGS = (); }; };
+		E32C1B3E1C13DAF9009385D7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B3C1C13DAF9009385D7 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		E32C1B3F1C13DAF9009385D7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B3D1C13DAF9009385D7 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		E32C1B441C13DB5F009385D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B401C13DB5F009385D7 /* AudioToolbox.framework */; };
+		E32C1B451C13DB5F009385D7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B411C13DB5F009385D7 /* CFNetwork.framework */; };
+		E32C1B461C13DB5F009385D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B421C13DB5F009385D7 /* CoreGraphics.framework */; };
+		E32C1B471C13DB5F009385D7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B431C13DB5F009385D7 /* CoreLocation.framework */; };
+		E32C1B491C13DB6C009385D7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B481C13DB6C009385D7 /* QuartzCore.framework */; };
+		E32C1B4B1C13DB73009385D7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B4A1C13DB73009385D7 /* Security.framework */; };
+		E32C1B4D1C13DB79009385D7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B4C1C13DB79009385D7 /* StoreKit.framework */; };
+		E32C1B4F1C13DB84009385D7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B4E1C13DB84009385D7 /* SystemConfiguration.framework */; };
+		E32C1B511C13DB8C009385D7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B501C13DB8C009385D7 /* libz.tbd */; };
+		E32C1B531C13DB96009385D7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B521C13DB96009385D7 /* libsqlite3.tbd */; };
+		E32C1B551C13DC91009385D7 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B541C13DC91009385D7 /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +48,21 @@
 		DFE161781C0D7D31003385C1 /* NewPostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewPostViewController.xib; sourceTree = "<group>"; };
 		DFE1617B1C0D7D43003385C1 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		DFE1617C1C0D7D43003385C1 /* UserProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileViewController.xib; sourceTree = "<group>"; };
+		E32C1B391C13DA4E009385D7 /* Snapbook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snapbook-Bridging-Header.h"; sourceTree = "<group>"; };
+		E32C1B3A1C13DA4F009385D7 /* Parse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parse.m; sourceTree = "<group>"; };
+		E32C1B3C1C13DAF9009385D7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		E32C1B3D1C13DAF9009385D7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		E32C1B401C13DB5F009385D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E32C1B411C13DB5F009385D7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E32C1B421C13DB5F009385D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E32C1B431C13DB5F009385D7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E32C1B481C13DB6C009385D7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E32C1B4A1C13DB73009385D7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E32C1B4C1C13DB79009385D7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E32C1B4E1C13DB84009385D7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E32C1B501C13DB8C009385D7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E32C1B521C13DB96009385D7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		E32C1B541C13DC91009385D7 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +70,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E32C1B531C13DB96009385D7 /* libsqlite3.tbd in Frameworks */,
+				E32C1B511C13DB8C009385D7 /* libz.tbd in Frameworks */,
+				E32C1B4F1C13DB84009385D7 /* SystemConfiguration.framework in Frameworks */,
+				E32C1B4D1C13DB79009385D7 /* StoreKit.framework in Frameworks */,
+				E32C1B4B1C13DB73009385D7 /* Security.framework in Frameworks */,
+				E32C1B491C13DB6C009385D7 /* QuartzCore.framework in Frameworks */,
+				E32C1B441C13DB5F009385D7 /* AudioToolbox.framework in Frameworks */,
+				E32C1B451C13DB5F009385D7 /* CFNetwork.framework in Frameworks */,
+				E32C1B461C13DB5F009385D7 /* CoreGraphics.framework in Frameworks */,
+				E32C1B471C13DB5F009385D7 /* CoreLocation.framework in Frameworks */,
+				E32C1B3F1C13DAF9009385D7 /* Parse.framework in Frameworks */,
+				E32C1B3E1C13DAF9009385D7 /* Bolts.framework in Frameworks */,
+				E32C1B551C13DC91009385D7 /* ParseUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +92,23 @@
 		DFE1614E1C0D7C87003385C1 = {
 			isa = PBXGroup;
 			children = (
+				E32C1B541C13DC91009385D7 /* ParseUI.framework */,
+				E32C1B521C13DB96009385D7 /* libsqlite3.tbd */,
+				E32C1B501C13DB8C009385D7 /* libz.tbd */,
+				E32C1B4E1C13DB84009385D7 /* SystemConfiguration.framework */,
+				E32C1B4C1C13DB79009385D7 /* StoreKit.framework */,
+				E32C1B4A1C13DB73009385D7 /* Security.framework */,
+				E32C1B481C13DB6C009385D7 /* QuartzCore.framework */,
+				E32C1B401C13DB5F009385D7 /* AudioToolbox.framework */,
+				E32C1B411C13DB5F009385D7 /* CFNetwork.framework */,
+				E32C1B421C13DB5F009385D7 /* CoreGraphics.framework */,
+				E32C1B431C13DB5F009385D7 /* CoreLocation.framework */,
+				E32C1B3C1C13DAF9009385D7 /* Bolts.framework */,
+				E32C1B3D1C13DAF9009385D7 /* Parse.framework */,
+				E32C1B3A1C13DA4F009385D7 /* Parse.m */,
 				DFE161591C0D7C87003385C1 /* Snapbook */,
 				DFE161581C0D7C87003385C1 /* Products */,
+				E32C1B391C13DA4E009385D7 /* Snapbook-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,6 +235,7 @@
 				DFE161631C0D7C87003385C1 /* Snapbook.xcdatamodeld in Sources */,
 				DFE161741C0D7D02003385C1 /* PostTableViewCell.swift in Sources */,
 				DFE161791C0D7D31003385C1 /* NewPostViewController.swift in Sources */,
+				E32C1B3B1C13DA4F009385D7 /* Parse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,10 +338,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Snapbook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jmoskowitz.Snapbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Snapbook-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -291,10 +357,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Snapbook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jmoskowitz.Snapbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Snapbook-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -317,6 +390,7 @@
 				DFE1616E1C0D7C87003385C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

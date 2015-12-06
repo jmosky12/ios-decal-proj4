@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostFeedTableViewController: UITableViewController {
+class PostFeedTableViewController: UITableViewController, PFLogInViewControllerDelegate {
     
     let textColor = UIColor.whiteColor()
     let textFont = UIFont(name: "Avenir", size: 40.0)
@@ -61,8 +61,16 @@ class PostFeedTableViewController: UITableViewController {
     }
     
     func newPost() {
-        let vc = NewPostViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        //let vc = NewPostViewController()
+        //navigationController?.pushViewController(vc, animated: true)
+        let login = PFLogInViewController()
+        login.title = "SnapBook"
+        login.logInView?.logo?.hidden = true
+        //        login.logInView?.logo?.addS
+        login.delegate = self
+        self.presentViewController(login, animated: true) { () -> Void in
+
+        }
     }
 
     /*

@@ -49,6 +49,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor(red: 60.0/255.0, green: 10.0/255.0, blue: 130.0/255.0, alpha: 1.0)
         UITabBar.appearance().translucent = false
         
+        Parse.setApplicationId("oxaxKBeRfV0SPggTnmaNn5YuTWJIhv56jv3pZIGK", clientKey: "33wGUNkGqctKoQ5WkRXBcSgKI4RuBzQI40KoJiH3")
+        let player = PFObject(className: "Player")
+        player.setObject("John", forKey: "Name")
+        player.setObject(1230, forKey: "Score")
+        player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+            if succeeded {
+                print("Object Uploaded")
+            } else {
+                print("Error: \(error!) \(error?.userInfo)")
+            }
+        }
         
 
         return true
