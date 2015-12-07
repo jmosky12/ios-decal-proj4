@@ -81,7 +81,7 @@ class NewPostViewController: UIViewController {
         })
         } else {
         //2
-        let p = Post(image: nil, user: PFUser.currentUser()!, comment: self.newPostTextView.text)
+            let p = Post(image: nil, user: PFUser.currentUser()!, comment: self.newPostTextView.text)
         p.saveInBackgroundWithBlock{ succeeded, error in
             if succeeded {
                 //3
