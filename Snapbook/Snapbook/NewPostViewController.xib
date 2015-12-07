@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewPostViewController" customModule="Snapbook" customModuleProvider="target">
@@ -248,27 +248,15 @@
                     <exclude reference="lyo-0D-Dt4"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="2bs-ZF-F1I"/>
-                    <exclude reference="Jna-Qm-7Xn"/>
-                    <exclude reference="Zu7-Mp-Uf0"/>
-                    <exclude reference="aiX-r9-JS0"/>
-                    <exclude reference="qse-NK-GJh"/>
-                    <exclude reference="EW4-9a-ZE4"/>
-                    <exclude reference="W70-w8-HrH"/>
-                    <exclude reference="uNw-S9-Q0R"/>
-                    <exclude reference="uxd-da-1DD"/>
-                    <exclude reference="vCA-hw-rCX"/>
-                    <exclude reference="6OT-q3-msg"/>
-                    <exclude reference="K3o-mt-zGp"/>
-                    <exclude reference="VFh-bj-3st"/>
-                    <exclude reference="1fG-O9-nNo"/>
-                    <exclude reference="Seg-JI-mgu"/>
                     <exclude reference="7fi-gy-M1Y"/>
                     <exclude reference="G6d-LD-Xrd"/>
                     <exclude reference="G9p-Is-7rm"/>
                     <exclude reference="Oak-9R-GI0"/>
                     <exclude reference="hLu-hP-Rch"/>
                     <exclude reference="kgs-Gh-fnN"/>
+                    <exclude reference="6OT-q3-msg"/>
+                    <exclude reference="K3o-mt-zGp"/>
+                    <exclude reference="VFh-bj-3st"/>
                     <exclude reference="HNk-ly-40c"/>
                     <exclude reference="IRj-ku-z4q"/>
                     <exclude reference="XCB-oL-cs5"/>
@@ -277,6 +265,18 @@
                     <exclude reference="WRt-W8-p4f"/>
                     <exclude reference="Zxk-d2-Z7S"/>
                     <exclude reference="akc-SH-LPX"/>
+                    <exclude reference="2bs-ZF-F1I"/>
+                    <exclude reference="Jna-Qm-7Xn"/>
+                    <exclude reference="Zu7-Mp-Uf0"/>
+                    <exclude reference="aiX-r9-JS0"/>
+                    <exclude reference="qse-NK-GJh"/>
+                    <exclude reference="1fG-O9-nNo"/>
+                    <exclude reference="Seg-JI-mgu"/>
+                    <exclude reference="EW4-9a-ZE4"/>
+                    <exclude reference="W70-w8-HrH"/>
+                    <exclude reference="uNw-S9-Q0R"/>
+                    <exclude reference="uxd-da-1DD"/>
+                    <exclude reference="vCA-hw-rCX"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -290,27 +290,15 @@
                     <include reference="lyo-0D-Dt4"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="2bs-ZF-F1I"/>
-                    <include reference="Jna-Qm-7Xn"/>
-                    <exclude reference="Zu7-Mp-Uf0"/>
-                    <include reference="aiX-r9-JS0"/>
-                    <include reference="qse-NK-GJh"/>
-                    <include reference="EW4-9a-ZE4"/>
-                    <include reference="W70-w8-HrH"/>
-                    <include reference="uNw-S9-Q0R"/>
-                    <include reference="uxd-da-1DD"/>
-                    <exclude reference="vCA-hw-rCX"/>
-                    <include reference="6OT-q3-msg"/>
-                    <exclude reference="K3o-mt-zGp"/>
-                    <include reference="VFh-bj-3st"/>
-                    <include reference="1fG-O9-nNo"/>
-                    <include reference="Seg-JI-mgu"/>
                     <include reference="7fi-gy-M1Y"/>
                     <exclude reference="G6d-LD-Xrd"/>
                     <exclude reference="G9p-Is-7rm"/>
                     <include reference="Oak-9R-GI0"/>
                     <include reference="hLu-hP-Rch"/>
                     <exclude reference="kgs-Gh-fnN"/>
+                    <include reference="6OT-q3-msg"/>
+                    <exclude reference="K3o-mt-zGp"/>
+                    <include reference="VFh-bj-3st"/>
                     <include reference="HNk-ly-40c"/>
                     <exclude reference="IRj-ku-z4q"/>
                     <exclude reference="XCB-oL-cs5"/>
@@ -319,6 +307,18 @@
                     <include reference="WRt-W8-p4f"/>
                     <include reference="Zxk-d2-Z7S"/>
                     <include reference="akc-SH-LPX"/>
+                    <include reference="2bs-ZF-F1I"/>
+                    <include reference="Jna-Qm-7Xn"/>
+                    <exclude reference="Zu7-Mp-Uf0"/>
+                    <include reference="aiX-r9-JS0"/>
+                    <include reference="qse-NK-GJh"/>
+                    <include reference="1fG-O9-nNo"/>
+                    <include reference="Seg-JI-mgu"/>
+                    <include reference="EW4-9a-ZE4"/>
+                    <include reference="W70-w8-HrH"/>
+                    <include reference="uNw-S9-Q0R"/>
+                    <include reference="uxd-da-1DD"/>
+                    <exclude reference="vCA-hw-rCX"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="308" y="301"/>

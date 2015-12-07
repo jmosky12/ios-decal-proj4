@@ -94,7 +94,10 @@ class PostFeedTableViewController: UITableViewController, PostTable {
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        if posts.count > 0 {
+            return posts.count
+        }
+        return 1
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -104,7 +107,11 @@ class PostFeedTableViewController: UITableViewController, PostTable {
             let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoPostTableViewCell
         }*/
         
- 
+        if posts.count == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
+            cell.postText.text = "Nothing to show!"
+            return cell
+        }
         if let x = posts[indexPath.row].image
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoPostTableViewCell
@@ -122,6 +129,7 @@ class PostFeedTableViewController: UITableViewController, PostTable {
             let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
             cell.postInfo.addGestureRecognizer(pressedInfo)
             cell.postInfo.tag = indexPath.row
+            PFClou
             return cell
         }
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
