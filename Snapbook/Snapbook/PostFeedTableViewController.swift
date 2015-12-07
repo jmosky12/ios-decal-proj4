@@ -143,6 +143,7 @@ class PostFeedTableViewController: UITableViewController, PostTable {
             } else {
                 cell.progressBar.setProgress(duration/60, animated: true)
             }
+            cell.delegate = self
             return cell
         }
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
@@ -160,6 +161,7 @@ class PostFeedTableViewController: UITableViewController, PostTable {
         } else {
             cell.progressBar.setProgress(duration/60, animated: true)
         }
+        cell.delegate = self
         return cell
     }
     

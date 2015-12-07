@@ -18,6 +18,7 @@ class PhotoPostTableViewCell: UITableViewCell {
     @IBOutlet weak var uploadedImage: UIImageView!
     @IBOutlet weak var postInfo: UILabel!
     var post:Post!
+    var delegate:PostTable!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.separatorInset = UIEdgeInsetsZero
@@ -55,6 +56,7 @@ class PhotoPostTableViewCell: UITableViewCell {
             post.saveInBackground()
             likeButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
             likeButton.enabled = false
+            delegate.refresh()
     }
     
 }
