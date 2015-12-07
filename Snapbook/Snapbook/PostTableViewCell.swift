@@ -15,6 +15,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postInfo: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var userName: UIButton!
+    var post:PFObject!
     var boosted = false
     
     override func awakeFromNib() {
@@ -24,7 +25,7 @@ class PostTableViewCell: UITableViewCell {
         self.layoutMargins = UIEdgeInsetsZero
         self.selectionStyle = .None
         
-        let img = UIImage(named: "pic2")
+        let img = UIImage(named: "blank-user")
         avatarImage.image = img
         avatarImage.clipsToBounds = true
         avatarImage.contentMode = UIViewContentMode.ScaleAspectFit
@@ -43,6 +44,9 @@ class PostTableViewCell: UITableViewCell {
         if boosted {
             //postInfo.text = "\(numBoosts + 1) Boosts, 8h Remaining"
             //increase numBoosts in database by 1
+            post.duration += 60
+            post.score += 1
+            post.saveInBackground()
             boosted = false
         } else {
             //postInfo.text = "\(numBoosts - 1) Boosts, 8h Remaining"

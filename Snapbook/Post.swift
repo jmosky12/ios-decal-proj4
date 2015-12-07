@@ -12,7 +12,7 @@ class Post: PFObject, PFSubclassing {
     @NSManaged var user: PFUser
     @NSManaged var comment: String?
     @NSManaged var duration: Int
-
+    @NSManaged var score: Int
     override class func initialize() {
         var onceToken: dispatch_once_t = 0
         dispatch_once(&onceToken) {
@@ -27,17 +27,18 @@ class Post: PFObject, PFSubclassing {
         return query
     }
     
-    init(image: PFFile?, user: PFUser, comment: String?, duration: Int) {
+    init(image: PFFile?, user: PFUser, comment: String?, duration: Int, score: Int) {
         super.init()
         
         self.image = image
         self.user = user
         self.comment = comment
         self.duration = duration
+        self.score = score
     }
     
     convenience init(image: PFFile?, user: PFUser, comment: String) {
-        self.init(image: image, user: user, comment: comment, duration: 60)
+        self.init(image: image, user: user, comment: comment, duration: 60, score: 0)
     }
     class func parseClassName() -> String {
         return "SnapPost"

@@ -72,6 +72,8 @@ class PostFeedTableViewController: UITableViewController, PostTable {
         self.tableView.registerNib(nib1, forCellReuseIdentifier: "postCell")
         let nib2: UINib = UINib(nibName: "PhotoPostTableViewCell", bundle: nil)
         self.tableView.registerNib(nib2, forCellReuseIdentifier: "photoCell")
+        let nib3: UINib = UINib(nibName: "EmptyTableViewCell", bundle: nil)
+        self.tableView.registerNib(nib3, forCellReuseIdentifier: "blank")
         getPosts()
         
         refreshCtrl = UIRefreshControl()
@@ -108,13 +110,15 @@ class PostFeedTableViewController: UITableViewController, PostTable {
         }*/
         
         if posts.count == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
-            cell.postText.text = "Nothing to show!"
+            let cell = tableView.dequeueReusableCellWithIdentifier("blank", forIndexPath: indexPath)
+            cell.textLabel!.text = "Nothing to show. Post something!"
+
             return cell
         }
         if let x = posts[indexPath.row].image
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoPostTableViewCell
+
             x.getDataInBackgroundWithBlock { data, error in
             if let data = data {
                 if let image = UIImage(data: data) {
@@ -129,7 +133,6 @@ class PostFeedTableViewController: UITableViewController, PostTable {
             let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
             cell.postInfo.addGestureRecognizer(pressedInfo)
             cell.postInfo.tag = indexPath.row
-            PFClou
             return cell
         }
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell

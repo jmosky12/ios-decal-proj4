@@ -37,6 +37,8 @@
 		E32C1B531C13DB96009385D7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B521C13DB96009385D7 /* libsqlite3.tbd */; };
 		E32C1B551C13DC91009385D7 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32C1B541C13DC91009385D7 /* ParseUI.framework */; };
 		E32C1B591C140297009385D7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C1B581C140297009385D7 /* Post.swift */; };
+		E32C1B601C1524F4009385D7 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C1B5E1C1524F4009385D7 /* EmptyTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		E32C1B611C1524F4009385D7 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E32C1B5F1C1524F4009385D7 /* EmptyTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		E32C1B521C13DB96009385D7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E32C1B541C13DC91009385D7 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		E32C1B581C140297009385D7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		E32C1B5E1C1524F4009385D7 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		E32C1B5F1C1524F4009385D7 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 				DFD89DE01C1407D10033CD37 /* PhotoPostTableViewCell.xib */,
 				DFE161771C0D7D31003385C1 /* NewPostViewController.swift */,
 				DFE161781C0D7D31003385C1 /* NewPostViewController.xib */,
+				E32C1B5E1C1524F4009385D7 /* EmptyTableViewCell.swift */,
+				E32C1B5F1C1524F4009385D7 /* EmptyTableViewCell.xib */,
 			);
 			name = Posts;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFD89DE21C1407D10033CD37 /* PhotoPostTableViewCell.xib in Resources */,
+				E32C1B611C1524F4009385D7 /* EmptyTableViewCell.xib in Resources */,
 				DFE1617E1C0D7D43003385C1 /* UserProfileViewController.xib in Resources */,
 				DFE161751C0D7D02003385C1 /* PostTableViewCell.xib in Resources */,
 				DFD89DE61C142A850033CD37 /* EditProfileViewController.xib in Resources */,
@@ -272,6 +279,7 @@
 				DFE161791C0D7D31003385C1 /* NewPostViewController.swift in Sources */,
 				DFD89DE51C142A850033CD37 /* EditProfileViewController.swift in Sources */,
 				E32C1B3B1C13DA4F009385D7 /* Parse.m in Sources */,
+				E32C1B601C1524F4009385D7 /* EmptyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
