@@ -19,7 +19,6 @@ class PhotoPostTableViewCell: UITableViewCell {
     @IBOutlet weak var postInfo: UILabel!
     var post:Post!
     var boosted = false
-    var post:Post!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.separatorInset = UIEdgeInsetsZero
