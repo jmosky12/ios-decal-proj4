@@ -16,6 +16,7 @@ class PhotoPostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var userName: UIButton!
     @IBOutlet weak var uploadedImage: UIImageView!
+    var boosted = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,6 +41,19 @@ class PhotoPostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    @IBAction func boostButtonPressed(sender: UIButton) {
+        //var numBoosts (pulled from database) = #
+        if boosted {
+            //postInfo.text = "\(numBoosts + 1) Boosts, 8h Remaining"
+            //increase numBoosts in database by 1
+            boosted = false
+        } else {
+            //postInfo.text = "\(numBoosts - 1) Boosts, 8h Remaining"
+            //decrease numBoosts in database by 1
+            boosted = true
+        }
     }
     
 }
