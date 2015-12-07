@@ -38,6 +38,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         edgesForExtendedLayout = .None
+        self.userTableView.backgroundColor = UIColor(red: 160.0/255.0, green: 155.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         
         let nib: UINib = UINib(nibName: "PostTableViewCell", bundle: nil)
         userTableView.registerNib(nib, forCellReuseIdentifier: "postCell")
@@ -46,7 +47,10 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         userTableView.estimatedRowHeight = 100
         userTableView.rowHeight = UITableViewAutomaticDimension
         userTableView.layer.cornerRadius = 5.0
-        userTableView.separatorColor = UIColor.blackColor()
+        userTableView.separatorColor = UIColor.whiteColor()
+        userTableView.separatorInset = UIEdgeInsetsZero
+        userTableView.preservesSuperviewLayoutMargins = false
+        userTableView.layoutMargins = UIEdgeInsetsZero
         
         userBioTextView.layer.cornerRadius = 5.0
         

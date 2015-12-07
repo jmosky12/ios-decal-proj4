@@ -59,6 +59,7 @@ class PostFeedTableViewController: UITableViewController, PostTable {
         self.navigationItem.rightBarButtonItem = addButton
         let logOutButton = UIBarButtonItem(title: "Log Out", style: UIBarButtonItemStyle.Plain, target: self, action: "logOutPressed")
         self.navigationItem.leftBarButtonItem = logOutButton
+        self.view.backgroundColor = UIColor(red: 160.0/255.0, green: 155.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         
         let titleTextAttributes: [String:NSObject] = [
             NSFontAttributeName: textFont!,
@@ -68,7 +69,10 @@ class PostFeedTableViewController: UITableViewController, PostTable {
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.separatorColor = UIColor.blackColor()
+        tableView.separatorColor = UIColor.whiteColor()
+        tableView.separatorInset = UIEdgeInsetsZero
+        tableView.preservesSuperviewLayoutMargins = false
+        tableView.layoutMargins = UIEdgeInsetsZero
         
         edgesForExtendedLayout = .None
         let nib1: UINib = UINib(nibName: "PostTableViewCell", bundle: nil)
