@@ -15,6 +15,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var userName: UIButton!
+    @IBOutlet weak var postInfo: UILabel!
     var post:Post!
     var boosted = false
     
@@ -30,6 +31,8 @@ class PostTableViewCell: UITableViewCell {
         avatarImage.clipsToBounds = true
         avatarImage.contentMode = UIViewContentMode.ScaleAspectFit
         avatarImage.layer.cornerRadius = 5.0
+        
+        postInfo.layer.cornerRadius = 5.0
         
     }
     

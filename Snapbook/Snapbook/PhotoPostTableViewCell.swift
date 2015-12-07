@@ -16,6 +16,7 @@ class PhotoPostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var userName: UIButton!
     @IBOutlet weak var uploadedImage: UIImageView!
+    @IBOutlet weak var postInfo: UILabel!
     var post:Post!
     var boosted = false
     
@@ -36,6 +37,7 @@ class PhotoPostTableViewCell: UITableViewCell {
         uploadedImage.clipsToBounds = true
         uploadedImage.contentMode = UIViewContentMode.ScaleAspectFit
 
+        postInfo.layer.cornerRadius = 5.0
         
     }
     

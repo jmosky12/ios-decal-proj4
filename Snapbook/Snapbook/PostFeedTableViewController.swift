@@ -123,9 +123,11 @@ class PostFeedTableViewController: UITableViewController, PostTable {
             cell.postText.text = self.posts[indexPath.row].comment
             cell.userName.setTitle(self.posts[indexPath.row].user.username, forState: .Normal)
             
+            print(duration)
             if duration >= 60 {
                 cell.progressBar.setProgress(1.0, animated: true)
             } else {
+                print(duration/60)
                 cell.progressBar.setProgress(duration/60, animated: true)
             }
             
@@ -136,9 +138,11 @@ class PostFeedTableViewController: UITableViewController, PostTable {
         cell.postText.text = posts[indexPath.row].comment
         cell.userName.setTitle(posts[indexPath.row].user.username, forState: .Normal)
         
+        print(duration)
         if duration >= 60 {
             cell.progressBar.setProgress(1.0, animated: true)
         } else {
+            print(duration/60)
             cell.progressBar.setProgress(duration/60, animated: true)
         }
         

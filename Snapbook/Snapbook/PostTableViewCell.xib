@@ -8,11 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="184" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="Snapbook" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="217" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="Snapbook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="217"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="183"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UKO-5X-WCq">
@@ -23,7 +23,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is my post. I can have a lot of text, and the cell will expand accordingly. Aw yiss." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dph-f2-WAk">
-                        <rect key="frame" x="8" y="66" width="304" height="59"/>
+                        <rect key="frame" x="8" y="66" width="304" height="60"/>
                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -38,14 +38,8 @@
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iNb-lN-71h">
-                        <rect key="frame" x="8" y="133" width="304" height="2"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="2" id="wjz-YU-xgM"/>
-                        </constraints>
-                    </progressView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Um7-A2-xjK">
-                        <rect key="frame" x="8" y="144" width="304" height="30"/>
+                        <rect key="frame" x="8" y="177" width="304" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="G4x-Er-rdQ"/>
                         </constraints>
@@ -57,6 +51,23 @@
                             <action selector="boostButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="w63-Lj-HEC"/>
                         </connections>
                     </button>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iNb-lN-71h">
+                        <rect key="frame" x="8" y="134" width="304" height="2"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="wjz-YU-xgM"/>
+                        </constraints>
+                    </progressView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgG-iZ-gOR">
+                        <rect key="frame" x="110" y="144" width="100" height="25"/>
+                        <color key="backgroundColor" red="0.23529411759999999" green="0.039215686270000001" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="aYZ-E3-FTr"/>
+                            <constraint firstAttribute="width" constant="100" id="eZB-Ay-JUl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="dph-f2-WAk" firstAttribute="top" secondItem="UKO-5X-WCq" secondAttribute="bottom" constant="8" id="6Qg-hK-GJK"/>
@@ -64,26 +75,47 @@
                     <constraint firstAttribute="trailingMargin" secondItem="OZm-TO-6dW" secondAttribute="trailing" id="Aqc-Mr-xar"/>
                     <constraint firstItem="Um7-A2-xjK" firstAttribute="top" secondItem="iNb-lN-71h" secondAttribute="bottom" constant="9" id="IVO-9D-665"/>
                     <constraint firstItem="iNb-lN-71h" firstAttribute="trailing" secondItem="dph-f2-WAk" secondAttribute="trailing" id="IxQ-zE-SGo"/>
+                    <constraint firstItem="Um7-A2-xjK" firstAttribute="leading" secondItem="WgG-iZ-gOR" secondAttribute="leading" id="NvW-40-i3e"/>
+                    <constraint firstItem="Um7-A2-xjK" firstAttribute="top" secondItem="WgG-iZ-gOR" secondAttribute="bottom" constant="8" id="SON-zo-99O"/>
+                    <constraint firstItem="WgG-iZ-gOR" firstAttribute="trailing" secondItem="iNb-lN-71h" secondAttribute="trailing" id="Tjj-f6-1QN"/>
                     <constraint firstItem="Um7-A2-xjK" firstAttribute="trailing" secondItem="iNb-lN-71h" secondAttribute="trailing" id="UMd-LL-Slc"/>
                     <constraint firstItem="iNb-lN-71h" firstAttribute="leading" secondItem="dph-f2-WAk" secondAttribute="leading" id="UW3-dI-yC6"/>
                     <constraint firstAttribute="topMargin" secondItem="UKO-5X-WCq" secondAttribute="top" id="Wtr-dQ-LXO"/>
+                    <constraint firstItem="Um7-A2-xjK" firstAttribute="leading" secondItem="iNb-lN-71h" secondAttribute="leading" id="YMo-JU-9q2"/>
+                    <constraint firstItem="WgG-iZ-gOR" firstAttribute="centerX" secondItem="iNb-lN-71h" secondAttribute="centerX" id="ZNb-Qu-D48"/>
                     <constraint firstItem="Um7-A2-xjK" firstAttribute="leading" secondItem="iNb-lN-71h" secondAttribute="leading" id="cef-Ck-bQb"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Um7-A2-xjK" secondAttribute="bottom" constant="1" id="dRx-uC-u1r"/>
                     <constraint firstItem="OZm-TO-6dW" firstAttribute="centerY" secondItem="UKO-5X-WCq" secondAttribute="centerY" id="gAD-4t-JEb"/>
                     <constraint firstAttribute="leadingMargin" secondItem="UKO-5X-WCq" secondAttribute="leading" id="kqh-Kp-tG0"/>
                     <constraint firstItem="dph-f2-WAk" firstAttribute="leading" secondItem="UKO-5X-WCq" secondAttribute="leading" id="ld7-pF-LMk"/>
+                    <constraint firstItem="WgG-iZ-gOR" firstAttribute="leading" secondItem="iNb-lN-71h" secondAttribute="leading" id="qvO-oH-3JL"/>
+                    <constraint firstItem="Um7-A2-xjK" firstAttribute="trailing" secondItem="WgG-iZ-gOR" secondAttribute="trailing" id="rC5-Cy-mkw"/>
                     <constraint firstItem="OZm-TO-6dW" firstAttribute="leading" secondItem="UKO-5X-WCq" secondAttribute="trailing" constant="8" id="sSU-X5-sCt"/>
+                    <constraint firstItem="Um7-A2-xjK" firstAttribute="trailing" secondItem="iNb-lN-71h" secondAttribute="trailing" id="tFN-Y0-uFi"/>
                     <constraint firstItem="dph-f2-WAk" firstAttribute="trailing" secondItem="OZm-TO-6dW" secondAttribute="trailing" id="tZi-eP-8rH"/>
+                    <constraint firstItem="WgG-iZ-gOR" firstAttribute="top" secondItem="iNb-lN-71h" secondAttribute="bottom" constant="8" id="xHx-hI-gM7"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="IVO-9D-665"/>
+                        <exclude reference="NvW-40-i3e"/>
+                        <exclude reference="UMd-LL-Slc"/>
+                        <exclude reference="cef-Ck-bQb"/>
+                        <exclude reference="rC5-Cy-mkw"/>
+                        <exclude reference="Tjj-f6-1QN"/>
+                        <exclude reference="qvO-oH-3JL"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatarImage" destination="UKO-5X-WCq" id="faX-dU-KGV"/>
                 <outlet property="likeButton" destination="Um7-A2-xjK" id="MGv-Ih-KkK"/>
+                <outlet property="postInfo" destination="WgG-iZ-gOR" id="Ox4-lH-LDR"/>
                 <outlet property="postText" destination="dph-f2-WAk" id="cR0-ZK-jtc"/>
                 <outlet property="progressBar" destination="iNb-lN-71h" id="jrN-i0-fBX"/>
                 <outlet property="userName" destination="OZm-TO-6dW" id="8n9-MS-Rbn"/>
             </connections>
-            <point key="canvasLocation" x="279" y="357"/>
+            <point key="canvasLocation" x="279" y="373.5"/>
         </tableViewCell>
     </objects>
 </document>
