@@ -75,6 +75,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
                 }
             }
         }
+        userNameLabel.text = currentUser["username"] as! String
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
