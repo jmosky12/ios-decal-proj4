@@ -15,7 +15,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postInfo: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var userName: UIButton!
-    var post:PFObject!
+    var post:Post!
     var boosted = false
     
     override func awakeFromNib() {
@@ -46,6 +46,7 @@ class PostTableViewCell: UITableViewCell {
             //increase numBoosts in database by 1
             post.duration += 60
             post.score += 1
+
             post.saveInBackground()
             boosted = false
         } else {
