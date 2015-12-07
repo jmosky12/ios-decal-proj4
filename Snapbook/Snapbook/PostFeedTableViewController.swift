@@ -38,7 +38,10 @@ class PostFeedTableViewController: UITableViewController, PostTable {
                 //2
                 if let objects = objects as? [Post] {
                  //   self.loadPosts(objects)
-                    self.posts = objects
+                    self.posts = objects.filter { element in
+                        let since:Int = Int((element.createdAt?.timeIntervalSinceNow)!)
+                        return element.duration + since > 0
+                    }
                     self.tableView.reloadData()
                     self.refreshCtrl.endRefreshing()
                 }
@@ -94,7 +97,7 @@ class PostFeedTableViewController: UITableViewController, PostTable {
    
 
     // MARK: - Table view data source
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if posts.count > 0 {
             return posts.count
@@ -112,13 +115,13 @@ class PostFeedTableViewController: UITableViewController, PostTable {
         if posts.count == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("blank", forIndexPath: indexPath)
             cell.textLabel!.text = "Nothing to show. Post something!"
-
+            
             return cell
         }
         if let x = posts[indexPath.row].image
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoPostTableViewCell
-
+            cell.post = self.posts[indexPath.row]
             x.getDataInBackgroundWithBlock { data, error in
             if let data = data {
                 if let image = UIImage(data: data) {
@@ -128,7 +131,9 @@ class PostFeedTableViewController: UITableViewController, PostTable {
             }
             }
             cell.postText.text = self.posts[indexPath.row].comment
-            
+            let since:Int = Int((self.posts[indexPath.row].createdAt?.timeIntervalSinceNow)!)
+            cell.postInfo.text = String(self.posts[indexPath.row].duration + since) + " s"
+
             cell.userName.setTitle(self.posts[indexPath.row].user.username, forState: .Normal)
             let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
             cell.postInfo.addGestureRecognizer(pressedInfo)
@@ -136,9 +141,10 @@ class PostFeedTableViewController: UITableViewController, PostTable {
             return cell
         }
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
-        
+        cell.post = self.posts[indexPath.row]
         cell.postText.text = posts[indexPath.row].comment
-        
+        let since:Int = Int((self.posts[indexPath.row].createdAt?.timeIntervalSinceNow)!)
+        cell.postInfo.text = String(self.posts[indexPath.row].duration + since) + " s"
         cell.userName.setTitle(posts[indexPath.row].user.username, forState: .Normal)
         let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
         cell.postInfo.addGestureRecognizer(pressedInfo)

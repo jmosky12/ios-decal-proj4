@@ -17,7 +17,7 @@ class PhotoPostTableViewCell: UITableViewCell {
     @IBOutlet weak var userName: UIButton!
     @IBOutlet weak var uploadedImage: UIImageView!
     var boosted = false
-    
+    var post:Post!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.separatorInset = UIEdgeInsetsZero
@@ -48,6 +48,10 @@ class PhotoPostTableViewCell: UITableViewCell {
         if boosted {
             //postInfo.text = "\(numBoosts + 1) Boosts, 8h Remaining"
             //increase numBoosts in database by 1
+            post.duration += 60
+            post.score += 1
+            
+            post.saveInBackground()
             boosted = false
         } else {
             //postInfo.text = "\(numBoosts - 1) Boosts, 8h Remaining"
