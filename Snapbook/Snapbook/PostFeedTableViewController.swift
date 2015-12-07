@@ -17,8 +17,10 @@ class PostFeedTableViewController: UITableViewController, PostTable {
     let textFont = UIFont(name: "Avenir", size: 30.0)
     var posts = [Post]()
     var refreshCtrl: UIRefreshControl!
+    var sortString: String!
     
-    init() {
+    init(sort: String) {
+        sortString = sort
         super.init(nibName: nil, bundle: nil)
     }
 

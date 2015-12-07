@@ -36,25 +36,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
         
-        let postFeed = PostFeedTableViewController()
-        let postFeedNC = UINavigationController(rootViewController: postFeed)
-        postFeedNC.tabBarItem.title = "Feed"
-        postFeedNC.tabBarItem.tag = 1
-        postFeedNC.navigationBar.barTintColor = UIColor.blackColor()
-        postFeedNC.navigationBar.tintColor = UIColor.whiteColor()
-        postFeedNC.navigationBar.topItem?.title = "News Feed"
-        postFeedNC.navigationBar.translucent = false
+        let textFont = UIFont(name: "Avenir", size: 15.0)
+        let titleTextAttributes: [String:NSObject] = [
+            NSFontAttributeName: textFont!
+        ]
+        
+        let recentPostFeed = PostFeedTableViewController(sort: "Recent")
+        let recentPostFeedNC = UINavigationController(rootViewController: recentPostFeed)
+        recentPostFeedNC.tabBarItem.title = "Recent"
+        recentPostFeedNC.tabBarItem.tag = 1
+        recentPostFeedNC.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
+        recentPostFeedNC.tabBarItem.setTitleTextAttributes(titleTextAttributes, forState: .Normal)
+        recentPostFeedNC.navigationBar.barTintColor = UIColor.blackColor()
+        recentPostFeedNC.navigationBar.tintColor = UIColor.whiteColor()
+        recentPostFeedNC.navigationBar.topItem?.title = "News Feed"
+        recentPostFeedNC.navigationBar.translucent = false
+        
+        let topPostFeed = PostFeedTableViewController(sort: "Top")
+        let topPostFeedNC = UINavigationController(rootViewController: topPostFeed)
+        topPostFeedNC.tabBarItem.title = "Top"
+        topPostFeedNC.tabBarItem.tag = 1
+        topPostFeedNC.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
+        topPostFeedNC.tabBarItem.setTitleTextAttributes(titleTextAttributes, forState: .Normal)
+        topPostFeedNC.navigationBar.barTintColor = UIColor.blackColor()
+        topPostFeedNC.navigationBar.tintColor = UIColor.whiteColor()
+        topPostFeedNC.navigationBar.topItem?.title = "News Feed"
+        topPostFeedNC.navigationBar.translucent = false
         
         let userProfile = UserProfileViewController()
         let userProfileNC = UINavigationController(rootViewController: userProfile)
         userProfileNC.tabBarItem.title = "Profile"
         userProfileNC.tabBarItem.tag = 2
+        userProfileNC.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
+        userProfileNC.tabBarItem.setTitleTextAttributes(titleTextAttributes, forState: .Normal)
         userProfileNC.navigationBar.barTintColor = UIColor.blackColor()
         userProfileNC.navigationBar.tintColor = UIColor.whiteColor()
         userProfileNC.navigationBar.topItem?.title = "Profile"
         userProfileNC.navigationBar.translucent = false
         
-        let controllers = [postFeedNC, userProfileNC]
+        let controllers = [recentPostFeedNC, topPostFeedNC, userProfileNC]
         
         tabBarController = UITabBarController()
         tabBarController.viewControllers = controllers
@@ -73,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
         
         UITabBar.appearance().tintColor = UIColor.whiteColor()
         UITabBar.appearance().barTintColor = UIColor.blackColor()
-        UITabBar.appearance().tintColor = UIColor(red: 60.0/255.0, green: 10.0/255.0, blue: 130.0/255.0, alpha: 1.0)
+        UITabBar.appearance().tintColor = UIColor(red: 160.0/255.0, green: 155.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         UITabBar.appearance().translucent = false
         
         Parse.setApplicationId("oxaxKBeRfV0SPggTnmaNn5YuTWJIhv56jv3pZIGK", clientKey: "33wGUNkGqctKoQ5WkRXBcSgKI4RuBzQI40KoJiH3")
