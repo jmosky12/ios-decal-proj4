@@ -26,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
         signUpController.signUpView?.usernameField?.text = ""
         signUpController.signUpView?.passwordField?.text = ""
         signUpController.signUpView?.emailField?.text = ""
-
+        PFUser.currentUser()!["bio"] = "Edit your profile to change this!"
+        PFUser.currentUser()!.saveInBackground()
         signUpController.presentViewController(tabBarController!, animated: true, completion: nil)
 //        signUpController.dismissViewControllerAnimated(false, completion: nil)
 

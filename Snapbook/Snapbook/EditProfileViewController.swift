@@ -56,7 +56,9 @@ class EditProfileViewController: UIViewController {
             delegate?.changePicture(imageView.image!)
         }
         delegate?.setBioText(bioTextView.text)
-        PFUser.currentUser()!["bio"] = bioTextView.text
+        let currentUser = PFUser.currentUser()!
+        currentUser.setObject(bioTextView.text, forKey: "bio")
+
         if imageView.image != nil {
             let pictureData = UIImagePNGRepresentation(imageView.image!)
             let file:PFFile! = PFFile(name:"image", data:pictureData!)
@@ -65,9 +67,9 @@ class EditProfileViewController: UIViewController {
                 if succeeded {
                     //2
                     //  self.saveWallPost(file)
-                    PFUser.currentUser()!["avatar"] = file
-                    PFUser.currentUser()?.saveInBackground()
-
+                    currentUser["avatar"] = file
+                    currentUser.saveInBackground()
+                    
                 } else if let error = error {
                     //3
                     //   self.showErrorView(error)
@@ -77,6 +79,7 @@ class EditProfileViewController: UIViewController {
                     print("Uploaded: \(percent)%")
             })
         }
+        currentUser.saveInBackground()
         self.navigationController?.popViewControllerAnimated(true)
     }
 
