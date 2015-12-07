@@ -87,12 +87,6 @@ class PostFeedTableViewController: UITableViewController, PostTable {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func didPressInfo(sender: UILabel) {
-        //expand this cell and show its comments
-    }
-    
-   
-
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -103,46 +97,51 @@ class PostFeedTableViewController: UITableViewController, PostTable {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // if user.photoproperty == nil {
-       
-        /* } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoPostTableViewCell
-        }*/
+        
+        tableView.separatorInset = UIEdgeInsetsZero
+        tableView.preservesSuperviewLayoutMargins = false
+        tableView.layoutMargins = UIEdgeInsetsZero
         
         if posts.count == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("blank", forIndexPath: indexPath)
             cell.textLabel!.text = "Nothing to show. Post something!"
-
             return cell
         }
-        if let x = posts[indexPath.row].image
-        {
+        
+        let duration: Float = Float(posts[indexPath.row].duration)
+        if let x = posts[indexPath.row].image {
             let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! PhotoPostTableViewCell
 
             x.getDataInBackgroundWithBlock { data, error in
-            if let data = data {
-                if let image = UIImage(data: data) {
-                    cell.uploadedImage!.image = image
-                    
+                if let data = data {
+                    if let image = UIImage(data: data) {
+                        cell.uploadedImage!.image = image
+                    }
                 }
             }
-            }
-            cell.postText.text = self.posts[indexPath.row].comment
             
+            cell.postText.text = self.posts[indexPath.row].comment
             cell.userName.setTitle(self.posts[indexPath.row].user.username, forState: .Normal)
-            let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
-            cell.postInfo.addGestureRecognizer(pressedInfo)
-            cell.postInfo.tag = indexPath.row
+            
+            if duration >= 60 {
+                cell.progressBar.setProgress(1.0, animated: true)
+            } else {
+                cell.progressBar.setProgress(duration/60, animated: true)
+            }
+            
             return cell
         }
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
-        
         cell.postText.text = posts[indexPath.row].comment
-        
         cell.userName.setTitle(posts[indexPath.row].user.username, forState: .Normal)
-        let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
-        cell.postInfo.addGestureRecognizer(pressedInfo)
-        cell.postInfo.tag = indexPath.row
+        
+        if duration >= 60 {
+            cell.progressBar.setProgress(1.0, animated: true)
+        } else {
+            cell.progressBar.setProgress(duration/60, animated: true)
+        }
+        
         return cell
     }
     
@@ -150,28 +149,6 @@ class PostFeedTableViewController: UITableViewController, PostTable {
         let vc = NewPostViewController()
         vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
-
-        
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
 
 }

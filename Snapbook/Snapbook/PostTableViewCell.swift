@@ -12,7 +12,7 @@ class PostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var postText: UILabel!
-    @IBOutlet weak var postInfo: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var userName: UIButton!
     var post:Post!
@@ -30,6 +30,7 @@ class PostTableViewCell: UITableViewCell {
         avatarImage.clipsToBounds = true
         avatarImage.contentMode = UIViewContentMode.ScaleAspectFit
         avatarImage.layer.cornerRadius = 5.0
+        
     }
     
 
@@ -41,7 +42,7 @@ class PostTableViewCell: UITableViewCell {
     
     @IBAction func boostButtonPressed(sender: UIButton) {
         //var numBoosts (pulled from database) = #
-        if boosted {
+        if !boosted {
             //postInfo.text = "\(numBoosts + 1) Boosts, 8h Remaining"
             //increase numBoosts in database by 1
             post.duration += 60
@@ -49,10 +50,7 @@ class PostTableViewCell: UITableViewCell {
 
             post.saveInBackground()
             boosted = false
-        } else {
-            //postInfo.text = "\(numBoosts - 1) Boosts, 8h Remaining"
-            //decrease numBoosts in database by 1
-            boosted = true
+            likeButton.titleLabel?.text = "Boosted"
         }
     }
     

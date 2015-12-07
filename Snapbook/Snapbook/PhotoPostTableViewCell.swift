@@ -12,10 +12,11 @@ class PhotoPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var postText: UILabel!
-    @IBOutlet weak var postInfo: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var userName: UIButton!
     @IBOutlet weak var uploadedImage: UIImageView!
+    var post:Post!
     var boosted = false
     
     override func awakeFromNib() {
@@ -31,9 +32,11 @@ class PhotoPostTableViewCell: UITableViewCell {
         avatarImage.contentMode = UIViewContentMode.ScaleAspectFit
         avatarImage.layer.cornerRadius = 5.0
         
+        
         uploadedImage.clipsToBounds = true
         uploadedImage.contentMode = UIViewContentMode.ScaleAspectFit
-        //doesnt scale well
+
+        
     }
     
     
@@ -45,14 +48,15 @@ class PhotoPostTableViewCell: UITableViewCell {
     
     @IBAction func boostButtonPressed(sender: UIButton) {
         //var numBoosts (pulled from database) = #
-        if boosted {
+        if !boosted {
             //postInfo.text = "\(numBoosts + 1) Boosts, 8h Remaining"
             //increase numBoosts in database by 1
+            post.duration += 60
+            post.score += 1
+            
+            post.saveInBackground()
             boosted = false
-        } else {
-            //postInfo.text = "\(numBoosts - 1) Boosts, 8h Remaining"
-            //decrease numBoosts in database by 1
-            boosted = true
+            likeButton.titleLabel?.text = "Boosted"
         }
     }
     
