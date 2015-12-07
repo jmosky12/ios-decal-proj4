@@ -17,7 +17,6 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var userName: UIButton!
     @IBOutlet weak var postInfo: UILabel!
     var post:Post!
-    var boosted = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,16 +44,15 @@ class PostTableViewCell: UITableViewCell {
     
     @IBAction func boostButtonPressed(sender: UIButton) {
         //var numBoosts (pulled from database) = #
-        if !boosted {
             //postInfo.text = "\(numBoosts + 1) Boosts, 8h Remaining"
             //increase numBoosts in database by 1
             post.duration += 60
             post.score += 1
 
             post.saveInBackground()
-            boosted = false
-            likeButton.titleLabel?.text = "Boosted"
-        }
+            likeButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
+            likeButton.enabled = false
+
     }
     
 }
