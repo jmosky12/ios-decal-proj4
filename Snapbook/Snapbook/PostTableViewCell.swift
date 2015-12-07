@@ -17,7 +17,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var userName: UIButton!
     @IBOutlet weak var postInfo: UILabel!
     var post:Post!
-    
+    var delegate:PostTable!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.separatorInset = UIEdgeInsetsZero
@@ -53,7 +53,7 @@ class PostTableViewCell: UITableViewCell {
             post.saveInBackground()
             likeButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
             likeButton.enabled = false
-
+            delegate.refresh()
     }
     
 }
