@@ -19,11 +19,24 @@ class Post: PFObject, PFSubclassing {
             self.registerSubclass()
         }
     }
-    
     override class func query() -> PFQuery? {
+        return query(false)
+    }
+    class func querySingleUser(user: PFUser) -> PFQuery? {
+        let query = PFQuery(className: Post.parseClassName()) //1
+        query.whereKey("user", equalTo: user)
+        query.includeKey("user")
+        query.orderByDescending("createdAt")
+        return query
+    }
+    class func query(sort: Bool) -> PFQuery? {
         let query = PFQuery(className: Post.parseClassName()) //1
         query.includeKey("user") //2
-        query.orderByDescending("createdAt") //3
+        if sort {
+            query.orderByDescending("score")
+        } else {
+            query.orderByDescending("createdAt") //3
+        }
         return query
     }
     

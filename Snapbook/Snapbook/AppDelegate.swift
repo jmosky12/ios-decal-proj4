@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UITabBarControllerDelegate {
 
     var window: UIWindow?
     var tabBarController: UITabBarController!
@@ -78,6 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
         
         tabBarController = UITabBarController()
         tabBarController.viewControllers = controllers
+        tabBarController.delegate = self
         self.window?.addSubview(tabBarController.view)
 
         let login = PFLogInViewController()
@@ -105,7 +106,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
         }
         return true
     }
-
+    
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        
+        let control = (viewController as! UINavigationController).viewControllers[0]
+        if let controller = control as? PostFeedTableViewController {
+            // obj is a string array. Do something with stringArray
+            controller.getPosts()
+        }
+        else if let controller = control as? UserProfileViewController {
+            controller.getPosts()
+        }
+    }
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

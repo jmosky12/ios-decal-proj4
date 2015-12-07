@@ -34,7 +34,7 @@ class PostFeedTableViewController: UITableViewController, PostTable {
     
     func getPosts() {
         //1
-        let query = Post.query()!
+        let query = Post.query(sortString == "Top")!
         query.findObjectsInBackgroundWithBlock { objects, error in
             if error == nil {
                 //2
