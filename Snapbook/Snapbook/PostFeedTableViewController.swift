@@ -134,6 +134,13 @@ class PostFeedTableViewController: UITableViewController, PostTable {
                 }
             }
             }
+            if let y = posts[indexPath.row].user.objectForKey("avatar") {
+                y.getDataInBackgroundWithBlock { data, error in 
+                    if let image = UIImage(data: data!) {
+                        cell.avatarImage!.image = image
+                    }
+                }
+            }
             cell.postText.text = self.posts[indexPath.row].comment
             let since:Int = Int((self.posts[indexPath.row].createdAt?.timeIntervalSinceNow)!)
             cell.postInfo.text = String(self.posts[indexPath.row].duration + since) + " s"
@@ -151,6 +158,13 @@ class PostFeedTableViewController: UITableViewController, PostTable {
             return cell
         }
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
+        if let y = posts[indexPath.row].user.objectForKey("avatar") {
+            y.getDataInBackgroundWithBlock { data, error in
+                if let image = UIImage(data: data!) {
+                    cell.avatarImage!.image = image
+                }
+            }
+        }
         cell.post = self.posts[indexPath.row]
         cell.postText.text = posts[indexPath.row].comment
         let since:Int = Int((self.posts[indexPath.row].createdAt?.timeIntervalSinceNow)!)

@@ -68,6 +68,17 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             NSForegroundColorAttributeName: textColor,
         ]
         self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
+        let currentUser = PFUser.currentUser()!
+        if let text = currentUser["bio"] {
+            userBioTextView.text = text as! String
+        }
+        if let avatar = currentUser["avatar"] {
+            avatar.getDataInBackgroundWithBlock { data, error in
+                if let image = UIImage(data: data!) {
+                    self.userAvatar.image = image
+                }
+            }
+        }
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
