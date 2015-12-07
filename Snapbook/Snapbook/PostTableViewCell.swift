@@ -32,6 +32,7 @@ class PostTableViewCell: UITableViewCell {
         avatarImage.layer.cornerRadius = 5.0
         
         postInfo.layer.cornerRadius = 5.0
+        postInfo.clipsToBounds = true
         
     }
     

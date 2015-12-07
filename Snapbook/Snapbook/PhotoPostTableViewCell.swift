@@ -36,6 +36,7 @@ class PhotoPostTableViewCell: UITableViewCell {
         uploadedImage.contentMode = UIViewContentMode.ScaleAspectFit
 
         postInfo.layer.cornerRadius = 5.0
+        postInfo.clipsToBounds = true
         
     }
     
