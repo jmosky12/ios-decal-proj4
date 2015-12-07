@@ -30,8 +30,6 @@ class PhotoPostTableViewCell: UITableViewCell {
         avatarImage.contentMode = UIViewContentMode.ScaleAspectFit
         avatarImage.layer.cornerRadius = 5.0
         
-        let img2 = UIImage(named: "ny")
-        uploadedImage.image = img2
         uploadedImage.clipsToBounds = true
         uploadedImage.contentMode = UIViewContentMode.ScaleAspectFit
         //doesnt scale well

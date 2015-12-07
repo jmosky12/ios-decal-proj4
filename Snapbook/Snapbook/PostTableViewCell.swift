@@ -15,6 +15,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postInfo: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var userName: UIButton!
+    var boosted = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,6 +36,19 @@ class PostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func boostButtonPressed(sender: UIButton) {
+        //var numBoosts (pulled from database) = #
+        if boosted {
+            //postInfo.text = "\(numBoosts + 1) Boosts, 8h Remaining"
+            //increase numBoosts in database by 1
+            boosted = false
+        } else {
+            //postInfo.text = "\(numBoosts - 1) Boosts, 8h Remaining"
+            //decrease numBoosts in database by 1
+            boosted = true
+        }
     }
     
 }

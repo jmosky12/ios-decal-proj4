@@ -56,8 +56,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         userAvatar.contentMode = UIViewContentMode.ScaleAspectFit
         userAvatar.layer.cornerRadius = 5.0
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "newPost")
-        self.navigationItem.rightBarButtonItem = addButton
         let editProfileButton = UIBarButtonItem(title: "Edit Profile", style: UIBarButtonItemStyle.Plain, target: self, action: "editProfile")
         self.navigationItem.leftBarButtonItem = editProfileButton
 
@@ -85,11 +83,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
-    }
-    
-    func newPost() {
-        let vc = NewPostViewController()
-        navigationController?.pushViewController(vc, animated: true)
     }
     
     func editProfile() {

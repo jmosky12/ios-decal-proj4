@@ -218,23 +218,23 @@
                     <exclude reference="30x-JR-m5o"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="gAF-hr-CiF"/>
+                    <exclude reference="hAE-of-Mwl"/>
+                    <exclude reference="uFS-aD-lyv"/>
+                    <exclude reference="heC-6N-fyT"/>
+                    <exclude reference="vj6-u9-ovB"/>
+                    <exclude reference="hPg-KK-FxB"/>
+                    <exclude reference="lb9-lM-sTa"/>
                     <exclude reference="Ezx-hy-ez3"/>
                     <exclude reference="bA7-1W-Kdv"/>
                     <exclude reference="7hq-hb-cGY"/>
                     <exclude reference="Oo8-h6-ibd"/>
+                    <exclude reference="I8v-Rw-PcB"/>
+                    <exclude reference="w20-UD-KnG"/>
                     <exclude reference="9C9-uY-Y3l"/>
                     <exclude reference="9Ef-7f-rFN"/>
                     <exclude reference="Btp-YY-EH6"/>
                     <exclude reference="w69-aa-zd2"/>
-                    <exclude reference="hPg-KK-FxB"/>
-                    <exclude reference="lb9-lM-sTa"/>
-                    <exclude reference="I8v-Rw-PcB"/>
-                    <exclude reference="w20-UD-KnG"/>
-                    <exclude reference="heC-6N-fyT"/>
-                    <exclude reference="vj6-u9-ovB"/>
-                    <exclude reference="gAF-hr-CiF"/>
-                    <exclude reference="hAE-of-Mwl"/>
-                    <exclude reference="uFS-aD-lyv"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -248,23 +248,23 @@
                     <include reference="30x-JR-m5o"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="gAF-hr-CiF"/>
+                    <include reference="hAE-of-Mwl"/>
+                    <include reference="uFS-aD-lyv"/>
+                    <include reference="heC-6N-fyT"/>
+                    <include reference="vj6-u9-ovB"/>
+                    <include reference="hPg-KK-FxB"/>
+                    <include reference="lb9-lM-sTa"/>
                     <include reference="Ezx-hy-ez3"/>
                     <include reference="bA7-1W-Kdv"/>
                     <include reference="7hq-hb-cGY"/>
                     <include reference="Oo8-h6-ibd"/>
+                    <include reference="I8v-Rw-PcB"/>
+                    <include reference="w20-UD-KnG"/>
                     <include reference="9C9-uY-Y3l"/>
                     <include reference="9Ef-7f-rFN"/>
                     <include reference="Btp-YY-EH6"/>
                     <include reference="w69-aa-zd2"/>
-                    <include reference="hPg-KK-FxB"/>
-                    <include reference="lb9-lM-sTa"/>
-                    <include reference="I8v-Rw-PcB"/>
-                    <include reference="w20-UD-KnG"/>
-                    <include reference="heC-6N-fyT"/>
-                    <include reference="vj6-u9-ovB"/>
-                    <include reference="gAF-hr-CiF"/>
-                    <include reference="hAE-of-Mwl"/>
-                    <include reference="uFS-aD-lyv"/>
                 </mask>
             </variation>
         </view>
