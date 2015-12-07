@@ -53,7 +53,7 @@ class PostTableViewCell: UITableViewCell {
 
             post.saveInBackground()
             boosted = false
-            likeButton.titleLabel?.text = "Boosted"
+            likeButton.enabled = false
         }
     }
     

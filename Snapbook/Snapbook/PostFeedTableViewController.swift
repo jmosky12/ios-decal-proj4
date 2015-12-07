@@ -133,11 +133,16 @@ class PostFeedTableViewController: UITableViewController, PostTable {
             cell.postText.text = self.posts[indexPath.row].comment
             let since:Int = Int((self.posts[indexPath.row].createdAt?.timeIntervalSinceNow)!)
             cell.postInfo.text = String(self.posts[indexPath.row].duration + since) + " s"
-
+            let duration: Float = Float(self.posts[indexPath.row].duration + since)
             cell.userName.setTitle(self.posts[indexPath.row].user.username, forState: .Normal)
             let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
             cell.postInfo.addGestureRecognizer(pressedInfo)
             cell.postInfo.tag = indexPath.row
+            if duration >= 60 {
+                cell.progressBar.setProgress(1.0, animated: true)
+            } else {
+                cell.progressBar.setProgress(duration/60, animated: true)
+            }
             return cell
         }
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
@@ -145,10 +150,16 @@ class PostFeedTableViewController: UITableViewController, PostTable {
         cell.postText.text = posts[indexPath.row].comment
         let since:Int = Int((self.posts[indexPath.row].createdAt?.timeIntervalSinceNow)!)
         cell.postInfo.text = String(self.posts[indexPath.row].duration + since) + " s"
+        let duration: Float = Float(self.posts[indexPath.row].duration + since)
         cell.userName.setTitle(posts[indexPath.row].user.username, forState: .Normal)
         let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
         cell.postInfo.addGestureRecognizer(pressedInfo)
         cell.postInfo.tag = indexPath.row
+        if self.posts[indexPath.row].duration + since >= 60 {
+            cell.progressBar.setProgress(1.0, animated: true)
+        } else {
+            cell.progressBar.setProgress(duration/60, animated: true)
+        }
         return cell
     }
     
