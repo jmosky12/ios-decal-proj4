@@ -34,6 +34,8 @@ class PostTableViewCell: UITableViewCell {
         postInfo.layer.cornerRadius = 5.0
         postInfo.clipsToBounds = true
         
+        progressBar.tintColor = UIColor(red: 60.0/255.0, green: 10.0/255.0, blue: 130.0/255.0, alpha: 1.0)
+        
     }
     
 

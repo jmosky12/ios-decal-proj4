@@ -104,7 +104,7 @@
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Here is where all the user's chosen info goes" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5Ac-PG-yK7">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.62902214479999996" green="0.60900251159999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="384" id="DSk-uK-B22"/>
                         <constraint firstAttribute="height" constant="90" id="zCf-Hn-wJ8"/>
