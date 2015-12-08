@@ -156,9 +156,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             cell.postInfo.text = String(self.posts[indexPath.row].duration + since) + " s"
             let duration: Float = Float(self.posts[indexPath.row].duration + since)
             cell.userName.setTitle(self.posts[indexPath.row].user.username, forState: .Normal)
-            let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
-            cell.postInfo.addGestureRecognizer(pressedInfo)
-            cell.postInfo.tag = indexPath.row
             if duration >= 60 {
                 cell.progressBar.setProgress(1.0, animated: true)
             } else {
@@ -181,9 +178,6 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         cell.postInfo.text = String(self.posts[indexPath.row].duration + since) + " s"
         let duration: Float = Float(self.posts[indexPath.row].duration + since)
         cell.userName.setTitle(posts[indexPath.row].user.username, forState: .Normal)
-        let pressedInfo = UITapGestureRecognizer(target: self, action: "didPressInfo:")
-        cell.postInfo.addGestureRecognizer(pressedInfo)
-        cell.postInfo.tag = indexPath.row
         if self.posts[indexPath.row].duration + since >= 60 {
             cell.progressBar.setProgress(1.0, animated: true)
         } else {
