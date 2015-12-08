@@ -79,7 +79,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
         
         userBioTextView.layer.cornerRadius = 5.0
         
-        let img = UIImage(named: "pic2")
+        let img = UIImage(named: "blank-user")
         userAvatar.image = img
         userAvatar.clipsToBounds = true
         userAvatar.contentMode = UIViewContentMode.ScaleAspectFit

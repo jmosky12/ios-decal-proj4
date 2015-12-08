@@ -26,7 +26,7 @@ class PhotoPostTableViewCell: UITableViewCell {
         self.layoutMargins = UIEdgeInsetsZero
         self.selectionStyle = .None
         
-        let img = UIImage(named: "pic2")
+        let img = UIImage(named: "blank-user")
         avatarImage.image = img
         avatarImage.clipsToBounds = true
         avatarImage.contentMode = UIViewContentMode.ScaleAspectFit
