@@ -11,7 +11,7 @@ posts, so the hotter it gets, the longer it burns!
 
 ## Features
 * Ability to post photos/text
-* Upvote/Downvote posts (increase/decrease duration)
+* Upvote posts to increase duration
 * Filter by most recent posts/hottest ones
 * Ability to create an account and a profile with avatar
 
