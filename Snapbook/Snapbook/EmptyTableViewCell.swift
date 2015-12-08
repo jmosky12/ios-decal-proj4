@@ -12,6 +12,9 @@ class EmptyTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.separatorInset = UIEdgeInsetsZero
+        self.preservesSuperviewLayoutMargins = false
+        self.layoutMargins = UIEdgeInsetsZero
         // Initialization code
     }
 
