@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "snapbook"
+    },
+    "snapbook": {
+      "applicationId": "oxaxKBeRfV0SPggTnmaNn5YuTWJIhv56jv3pZIGK"
+    }
+  }
+}

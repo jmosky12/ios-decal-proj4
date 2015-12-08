@@ -13,6 +13,7 @@ class Post: PFObject, PFSubclassing {
     @NSManaged var comment: String?
     @NSManaged var duration: Int
     @NSManaged var score: Int
+    var boosted:Bool = false
     override class func initialize() {
         var onceToken: dispatch_once_t = 0
         dispatch_once(&onceToken) {

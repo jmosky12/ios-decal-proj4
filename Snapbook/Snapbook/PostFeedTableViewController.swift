@@ -40,9 +40,17 @@ class PostFeedTableViewController: UITableViewController, PostTable {
                 //2
                 if let objects = objects as? [Post] {
                  //   self.loadPosts(objects)
+                    let oldposts = self.posts
                     self.posts = objects.filter { element in
                         let since:Int = Int((element.createdAt?.timeIntervalSinceNow)!)
                         return element.duration + since > 0
+                    }
+                    for element in oldposts {
+                        for element2 in self.posts {
+                            if element.objectId == element2.objectId {
+                                element2.boosted = element.boosted
+                            }
+                        }
                     }
                     self.tableView.reloadData()
                     self.refreshCtrl.endRefreshing()
@@ -157,6 +165,7 @@ class PostFeedTableViewController: UITableViewController, PostTable {
                 cell.progressBar.setProgress(duration/60, animated: true)
             }
             cell.delegate = self
+            cell.likeButton.enabled = !self.posts[indexPath.row].boosted
             return cell
         }
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
@@ -182,6 +191,7 @@ class PostFeedTableViewController: UITableViewController, PostTable {
             cell.progressBar.setProgress(duration/60, animated: true)
         }
         cell.delegate = self
+        cell.likeButton.enabled = !self.posts[indexPath.row].boosted
         return cell
     }
     

@@ -19,6 +19,7 @@ class PhotoPostTableViewCell: UITableViewCell {
     @IBOutlet weak var postInfo: UILabel!
     var post:Post!
     var delegate:PostTable!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         self.separatorInset = UIEdgeInsetsZero
@@ -42,8 +43,6 @@ class PhotoPostTableViewCell: UITableViewCell {
         progressBar.tintColor = UIColor(red: 60.0/255.0, green: 10.0/255.0, blue: 130.0/255.0, alpha: 1.0)
         
     }
-    
-    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
@@ -58,6 +57,8 @@ class PhotoPostTableViewCell: UITableViewCell {
             post.score += 1
             post.saveInBackground()
             likeButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
+
+            post.boosted = true
             likeButton.enabled = false
             delegate.refresh()
     }
